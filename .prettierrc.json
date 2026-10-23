@@ -1,4 +1,9 @@
 {
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "printWidth": 80,
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-classnames",
+    "prettier-plugin-merge"
+  ],
   "tailwindStylesheet": "./src/style.css"
 }

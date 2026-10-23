@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Bookmark landing page</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="c-skip-link sr-only focus:not-sr-only" href="#main"
+      >Skip to main content</a
+    >
+    <header class="c-site-header">
+      <a href="/" aria-label="Bookmark home"
+        ><img src="./images/logo-bookmark.svg" alt="" width="148" height="25"
+      /></a>
+      <button
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="primary-menu"
+      >
+        <img src="./images/icon-hamburger.svg" alt="" width="18" height="15" />
+      </button>
+      <nav id="primary-menu" aria-label="Main">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#download">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="c-hero" aria-labelledby="hero-title">
+        <img
+          src="./images/illustration-hero.svg"
+          alt="Bookmark browser interface showing saved sites"
+          width="657"
+          height="466"
+        />
+        <div>
+          <h1 id="hero-title">A Simple Bookmark Manager</h1>
+          <p>
+            A clean and simple interface to organize your favourite websites.
+            Open a new browser tab and see your sites load instantly. Try it for
+            free.
+          </p>
+          <div>
+            <a href="#download">Get it on Chrome</a>
+            <a href="#download">Get it on Firefox</a>
+          </div>
+        </div>
+      </section>
+      <section
+        class="c-features"
+        id="features"
+        aria-labelledby="features-title"
+      >
+        <h2 id="features-title">Features</h2>
+        <p>
+          Our aim is to make it quick and easy for you to access your favourite
+          websites. Your bookmarks sync between your devices so you can access
+          them on the go.
+        </p>
+        <nav aria-label="Features">
+          <ul>
+            <li>
+              <a href="#simple-bookmarking" aria-current="location"
+                >Simple Bookmarking</a
+              >
+            </li>
+            <li><a href="#speedy-searching">Speedy Searching</a></li>
+            <li><a href="#easy-sharing">Easy Sharing</a></li>
+          </ul>
+        </nav>
+        <section id="simple-bookmarking" aria-labelledby="simple-title">
+          <img
+            src="./images/illustration-features-tab-1.svg"
+            alt="Bookmark interface showing a saved website list"
+            width="536"
+            height="346"
+          />
+          <div>
+            <h3 id="simple-title">Bookmark in one click</h3>
+            <p>
+              Organize your bookmarks however you like. Our simple drag-and-drop
+              interface gives you complete control over how you manage your
+              favourite sites.
+            </p>
+            <a href="#"
+              >More Info<span class="sr-only">
+                about simple bookmarking</span
+              ></a
+            >
+          </div>
+        </section>
+        <section id="speedy-searching" aria-labelledby="search-title">
+          <img
+            src="./images/illustration-features-tab-2.svg"
+            alt="Bookmark interface with a search result"
+            width="478"
+            height="416"
+          />
+          <div>
+            <h3 id="search-title">Intelligent search</h3>
+            <p>
+              Our powerful search feature will help you find saved sites in no
+              time at all. No need to trawl through all of your bookmarks.
+            </p>
+            <a href="#"
+              >More Info<span class="sr-only">
+                about intelligent search</span
+              ></a
+            >
+          </div>
+        </section>
+        <section id="easy-sharing" aria-labelledby="sharing-title">
+          <img
+            src="./images/illustration-features-tab-3.svg"
+            alt="Bookmark interface showing a shared collection"
+            width="440"
+            height="380"
+          />
+          <div>
+            <h3 id="sharing-title">Share your bookmarks</h3>
+            <p>
+              Easily share your bookmarks and collections with others. Create a
+              shareable link that you can send at the click of a button.
+            </p>
+            <a href="#"
+              >More Info<span class="sr-only"> about sharing bookmarks</span></a
+            >
+          </div>
+        </section>
+      </section>
+      <section
+        class="c-download"
+        id="download"
+        aria-labelledby="download-title"
+      >
+        <h2 id="download-title">Download the extension</h2>
+        <p>
+          We’ve got more browsers in the pipeline. Please do let us know if
+          you’ve got a favourite you’d like us to prioritize.
+        </p>
+        <ul class="c-download__list">
+          <li>
+            <article>
+              <img
+                src="./images/logo-chrome.svg"
+                alt=""
+                width="102"
+                height="100"
+              />
+              <h3>Add to Chrome</h3>
+              <p>Minimum version 62</p>
+              <a href="#"
+                >Add &amp; Install Extension<span class="sr-only">
+                  for Chrome</span
+                ></a
+              >
+            </article>
+          </li>
+          <li>
+            <article>
+              <img
+                src="./images/logo-firefox.svg"
+                alt=""
+                width="105"
+                height="100"
+              />
+              <h3>Add to Firefox</h3>
+              <p>Minimum version 55</p>
+              <a href="#"
+                >Add &amp; Install Extension<span class="sr-only">
+                  for Firefox</span
+                ></a
+              >
+            </article>
+          </li>
+          <li>
+            <article>
+              <img
+                src="./images/logo-opera.svg"
+                alt=""
+                width="96"
+                height="100"
+              />
+              <h3>Add to Opera</h3>
+              <p>Minimum version 46</p>
+              <a href="#"
+                >Add &amp; Install Extension<span class="sr-only">
+                  for Opera</span
+                ></a
+              >
+            </article>
+          </li>
+        </ul>
+      </section>
+      <section class="c-faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Frequently Asked Questions</h2>
+        <p>
+          Here are some of our FAQs. If you have any other questions you’d like
+          answered please feel free to email us.
+        </p>
+        <div class="c-faq__list">
+          <details>
+            <summary>What is Bookmark?</summary>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum
+              quis quam ornare mattis.
+            </p>
+          </details>
+          <details open>
+            <summary>How can I request a new browser?</summary>
+            <p>
+              Vivamus luctus eros aliquet convallis ultricies. Mauris augue
+              massa, ultricies non ligula. Suspendisse imperdiet. Vivamus luctus
+              eros aliquet convallis ultricies. Mauris augue massa, ultricies
+              non ligula. Suspendisse imperdie tVivamus luctus eros aliquet
+              convallis ultricies. Mauris augue massa, ultricies non ligula.
+              Suspendisse imperdiet.
+            </p>
+          </details>
+          <details>
+            <summary>Is there a mobile app?</summary>
+            <p>
+              Sed consectetur quam id neque fermentum accumsan. Praesent luctus
+              vestibulum dolor, ut condimentum urna vulputate eget. Cras in
+              ligula quis est pharetra mattis sit amet pharetra purus. Sed
+              sollicitudin ex et ultricies bibendum.
+            </p>
+          </details>
+          <details>
+            <summary>What about other Chromium browsers?</summary>
+            <p>
+              Integer condimentum ipsum id imperdiet finibus. Vivamus in
+              placerat mi, at euismod dui. Aliquam vitae neque eget nisl gravida
+              pellentesque non ut velit.
+            </p>
+          </details>
+        </div>
+        <a href="#"
+          >More Info<span class="sr-only">
+            about frequently asked questions</span
+          ></a
+        >
+      </section>
+      <section class="c-contact" id="contact" aria-labelledby="contact-title">
+        <p>35,000+ already joined</p>
+        <h2 id="contact-title">Stay up-to-date with what we’re doing</h2>
+        <form>
+          <label class="sr-only" for="email">Email address</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="example@email.com"
+            required
+            aria-describedby="email-error"
+          />
+          <p id="email-error" hidden>Whoops, make sure it’s an email</p>
+          <button type="submit">Contact Us</button>
+        </form>
+      </section>
+    </main>
+    <footer class="c-site-footer">
+      <a href="/" aria-label="Bookmark home"
+        ><img src="./images/logo-bookmark.svg" alt="" width="148" height="25"
+      /></a>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#download">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <ul class="c-site-footer__social">
+        <li>
+          <a href="#" aria-label="Facebook"
+            ><img
+              src="./images/icon-facebook.svg"
+              alt=""
+              width="24"
+              height="24"
+          /></a>
+        </li>
+        <li>
+          <a href="#" aria-label="Twitter"
+            ><img src="./images/icon-twitter.svg" alt="" width="24" height="20"
+          /></a>
+        </li>
+      </ul>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </footer>
+  </body>
+</html>

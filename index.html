@@ -52,8 +52,9 @@
     </header>
     <aside
       id="mobile-menu"
-      class="fixed inset-y-0 right-0 z-50 block w-screen bg-blue-950
-        px-[calc((100vw-82vw)/2)] pt-10 shadow-lg md:hidden" hidden
+      class="fixed inset-y-0 right-0 z-50 block w-screen flex flex-col h-[100dvh] pb-12 bg-blue-950/98
+        px-[calc((100vw-82vw)/2)] pt-10 shadow-lg md:hidden"
+      hidden
     >
       <div class="flex justify-between">
         <a href="/" aria-label="Bookmark home">
@@ -114,13 +115,30 @@
           </li>
           <li class="w-full py-6 text-center">
             <a
-              class="block py-[15.5px] rounded-[5px] border border-white font-rubik text-[20px]/[17px] tracking-[2.31px] text-white"
+              class="block rounded-[5px] border border-white py-[15.5px]
+                font-rubik text-[20px]/[17px] tracking-[2.31px] text-white"
               href="#"
               >Login</a
             >
           </li>
         </ul>
       </nav>
+      <ul class="c-site-footer__social flex items-center justify-center gap-10 mt-auto">
+        <li>
+          <a href="#" aria-label="Facebook"
+            ><img
+              src="./images/icon-facebook.svg"
+              alt=""
+              width="24"
+              height="24"
+          /></a>
+        </li>
+        <li>
+          <a href="#" aria-label="Twitter"
+            ><img src="./images/icon-twitter.svg" alt="" width="24" height="20"
+          /></a>
+        </li>
+      </ul>
     </aside>
     <main id="main" class="mt-23">
       <section class="c-hero flex flex-col gap-12" aria-labelledby="hero-title">

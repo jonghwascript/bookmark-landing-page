@@ -25,3 +25,24 @@ mobileMenu.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && !mobileMenu.hidden) closeMenu();
 });
+
+const featureLinks = document.querySelectorAll('nav[aria-label="Features"] a');
+
+featureLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    featureLinks.forEach((featureLink) => {
+      const isSelected = featureLink === link;
+      const panel = document.getElementById(featureLink.hash.slice(1));
+
+      panel.hidden = !isSelected;
+
+      if (isSelected) {
+        featureLink.setAttribute("aria-current", "location");
+      } else {
+        featureLink.removeAttribute("aria-current");
+      }
+    });
+  });
+});

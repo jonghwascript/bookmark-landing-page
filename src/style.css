@@ -27,6 +27,7 @@ body {
 @layer components {
   .c-feature-panel {
     @apply flex flex-col gap-8 px-8;
+    animation: feature-panel-in 0.3s ease-in-out;
   }
 
   .c-feature-panel__visual {
@@ -89,6 +90,7 @@ body {
   }
 
   .c-feature-link:hover::after,
+  .c-feature-link[aria-current="location"]::after,
   .c-feature-link:focus-visible::after {
     @apply opacity-100;
   }
@@ -148,5 +150,21 @@ body {
 
   .c-download-card__description {
     @apply text-center font-rubik text-[15px]/[1.65] font-normal text-blue-950;
+  }
+}
+
+@keyframes feature-panel-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c-feature-panel {
+    animation: none;
   }
 }

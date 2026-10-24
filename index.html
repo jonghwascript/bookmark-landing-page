@@ -28,6 +28,7 @@
           ><img src="./images/logo-bookmark.svg" alt="" width="148" height="25"
         /></a>
         <button
+          class="block lg:hidden"
           type="button"
           aria-label="Open menu"
           aria-expanded="false"
@@ -40,12 +41,42 @@
             height="15"
           />
         </button>
-        <nav id="primary-menu" aria-label="Main" hidden>
-          <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#download">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#">Login</a></li>
+        <nav id="primary-menu" aria-label="Main" class="hidden lg:block">
+          <ul class="flex gap-12">
+            <li>
+              <a
+                class="font-rubik text-[14px]/[2.0] tracking-[0.25px]
+                  text-blue-950 uppercase"
+                href="#features"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a
+                class="font-rubik text-[14px]/[2.0] tracking-[0.25px]
+                  text-blue-950 uppercase"
+                href="#download"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                class="font-rubik text-[14px]/[2.0] tracking-[0.25px]
+                  text-blue-950 uppercase"
+                href="#contact"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                class="rounded-[5px] border border-transparent bg-red-400 px-8
+                  py-2 font-rubik text-[14px]/[2.0] tracking-[0.25px] text-white
+                  uppercase hover:border hover:border-red-400
+                  hover:bg-transparent hover:text-red-400"
+                href="#"
+                >Login</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
@@ -148,12 +179,17 @@
         </li>
       </ul>
     </aside>
-    <main id="main" class="mt-23">
-      <section class="c-hero flex flex-col gap-12" aria-labelledby="hero-title">
+    <main id="main" class="mt-23 lg:mt-36">
+      <section
+        class="c-hero reading-flow-flex-visual flex flex-col gap-12
+          lg:flex-row-reverse lg:justify-start lg:gap-0 lg:pl-[calc(max(0px,(100%_-_1275px)/2)_+_80px)]"
+        aria-labelledby="hero-title"
+      >
         <div
           class="relative grid w-full place-items-center px-4.5 before:absolute
             before:right-0 before:bottom-0 before:h-[78%] before:w-[76%]
-            before:rounded-l-[316.5px] before:bg-blue-600 before:content-['']"
+            before:rounded-l-[316.5px] before:bg-blue-600 before:content-['']
+            lg:grow lg:basis-[52%]"
         >
           <!-- prettier-ignore -->
           <svg xmlns="http://www.w3.org/2000/svg" class="
@@ -174,17 +210,20 @@
           </filter>
           <rect id="c" width="578" height="385" rx="26"/><filter id="b" width="126%" height="139%" x="-13%" y="-11.7%" filterUnits="objectBoundingBox"><feOffset dy="30" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="20"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.18243335 0 0 0 0 0.230632694 0 0 0 0 0.506057518 0 0 0 0.200120192 0"/></filter><linearGradient id="d" x1="99.013%" x2="2.544%" y1="71.675%" y2="29.014%"><stop offset="0%" stop-color="#151515"/><stop offset="100%" stop-color="#3D3D3D"/></linearGradient><rect id="e" width="536" height="346" y="3" rx="8"/></defs><g fill="none" fill-rule="evenodd" filter="url(#a)" transform="translate(39 9)"><g transform="translate(.5 .5)"><g fill-rule="nonzero"><use fill="#000" filter="url(#b)" xlink:href="#c"/><use fill="#777" xlink:href="#c"/></g><rect width="574.23" height="381.865" x="2" y="2" fill="url(#d)" fill-rule="nonzero" rx="25"/><g transform="translate(21.03 16.303)"><rect width="471.463" height="353.756" x="33" fill="#2A2A2A" fill-rule="nonzero" opacity=".1" rx="5"/><mask id="f" fill="#fff"><use xlink:href="#e"/></mask><use fill="#E8EAF6" fill-rule="nonzero" xlink:href="#e"/><g mask="url(#f)"><path fill="#5267DF" d="M-3.53 3.197h547v59h-547z"/><g transform="translate(22.47 17.197)" fill="#FFF"><circle cx="16" cy="16" r="16" opacity=".245"/><circle cx="477" cy="16" r="16" opacity=".104"/><g transform="translate(47 6)"><rect width="120" height="6" opacity=".75" rx="3"/><rect width="64" height="6" y="14" opacity=".25" rx="3"/></g></g></g><g mask="url(#f)"><g transform="translate(57 96)"><rect width="261" height="316" fill="#FFF" rx="8"/><rect width="128" height="316" x="295" fill="#FFF" rx="8"/><rect width="120" height="6" x="78.47" y="38.197" fill="#242A45" opacity=".5" rx="3"/></g></g></g></g><g transform="translate(110 135)"><circle cx="16" cy="26" r="16" fill="#F98E5D"/><rect width="88" height="6" x="284" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="20" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="40" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="60" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="94" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="114" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="134" fill="#242A45" opacity=".25" rx="3"/><rect width="64" height="6" x="47" y="30" fill="#242A45" opacity=".25" rx="3"/></g><g transform="translate(110 201)"><circle cx="16" cy="16" r="16" fill="#6AC6D6"/><rect width="120" height="6" x="47" y="6" fill="#242A45" opacity=".5" rx="3"/><rect width="64" height="6" x="47" y="20" fill="#242A45" opacity=".25" rx="3"/></g><g transform="translate(110 257)"><circle cx="16" cy="16" r="16" fill="#A47ED4"/><rect width="120" height="6" x="47" y="6" fill="#242A45" opacity=".5" rx="3"/><rect width="64" height="6" x="47" y="20" fill="#242A45" opacity=".25" rx="3"/></g><g transform="translate(110 313)"><circle cx="16" cy="16" r="16" fill="#EC7878"/><rect width="120" height="6" x="47" y="6" fill="#242A45" opacity=".5" rx="3"/><rect width="64" height="6" x="47" y="20" fill="#242A45" opacity=".25" rx="3"/></g></g></svg>
         </div>
-        <div class="page-container flex flex-col gap-6 px-[31px]">
-          <h1 id="hero-title" class="c-title">
+        <div
+          class="page-container flex flex-col gap-6 px-[31px] lg:m-0 lg:max-w-[540px] lg:basis-[48%]
+            lg:px-0"
+        >
+          <h1 id="hero-title" class="c-title lg:text-left">
             A Simple Bookmark
             <span class="block">Manager</span>
           </h1>
-          <p class="c-description">
+          <p class="c-description lg:text-left">
             A clean and simple interface to organize your favourite websites.
             Open a new browser tab and see your sites load instantly. Try it for
             free.
           </p>
-          <div class="flex flex-wrap justify-center gap-4">
+          <div class="flex flex-wrap justify-center gap-4 lg:justify-start">
             <a
               class="shrink-0 rounded-[5px] bg-blue-600 px-[14.5px] py-[9px]
                 font-rubik text-[15px]/[2.0] font-medium text-white"
@@ -237,13 +276,12 @@
       </section>
       <!-- Bookmark in one click< -->
       <section
-        class="c-feature-panel page-container mt-11"
+        class="c-feature-panel page-container mt-11 lg:flex lg:flex-row lg:justify-center lg:mt-18"
         id="simple-bookmarking"
         aria-labelledby="simple-title"
       >
         <div
-          class="c-feature-panel__visual"
-          style="--feature-image-ratio: 346 / 536"
+          class="c-feature-panel__visual lg:flex-1 lg:mb-0"
         >
           <img
             src="./images/illustration-features-tab-1.svg"
@@ -253,7 +291,7 @@
             class="c-feature-panel__image"
           />
         </div>
-        <div class="c-feature-panel__body">
+        <div class="c-feature-panel__body lg:flex-1">
           <h3 class="c-title" id="simple-title">Bookmark in one click</h3>
           <p class="c-description">
             Organize your bookmarks however you like. Our simple drag-and-drop
@@ -267,14 +305,13 @@
       </section>
       <!-- Intelligent search -->
       <section
-        class="c-feature-panel page-container mt-11"
+        class="c-feature-panel page-container mt-11 lg:flex lg:flex-row lg:justify-center lg:mt-18"
         id="speedy-searching"
         aria-labelledby="search-title"
         hidden
       >
         <div
-          class="c-feature-panel__visual"
-          style="--feature-image-ratio: 416 / 478"
+          class="c-feature-panel__visual lg:flex-1 lg:mb-0"
         >
           <img
             src="./images/illustration-features-tab-2.svg"
@@ -284,7 +321,7 @@
             class="c-feature-panel__image"
           />
         </div>
-        <div class="c-feature-panel__body">
+        <div class="c-feature-panel__body lg:flex-1">
           <h3 id="search-title" class="c-title">Intelligent search</h3>
           <p class="c-description">
             Our powerful search feature will help you find saved sites in no
@@ -297,14 +334,13 @@
       </section>
       <!-- Share your bookmarks -->
       <section
-        class="c-feature-panel page-container mt-11"
+        class="c-feature-panel page-container mt-11 lg:flex lg:flex-row lg:justify-center lg:mt-18"
         id="easy-sharing"
         aria-labelledby="sharing-title"
         hidden
       >
         <div
-          class="c-feature-panel__visual"
-          style="--feature-image-ratio: 380 / 440"
+          class="c-feature-panel__visual lg:flex-1 lg:mb-0"
         >
           <img
             src="./images/illustration-features-tab-3.svg"
@@ -314,7 +350,7 @@
             class="c-feature-panel__image"
           />
         </div>
-        <div class="c-feature-panel__body">
+        <div class="c-feature-panel__body lg:flex-1">
           <h3 id="sharing-title" class="c-title">Share your bookmarks</h3>
           <p class="c-description">
             Easily share your bookmarks and collections with others. Create a
@@ -561,7 +597,8 @@
           </ul>
         </nav>
         <ul
-          class="c-site-footer__social flex items-center justify-center gap-10 md:gap-6"
+          class="c-site-footer__social flex items-center justify-center gap-10
+            md:gap-6"
         >
           <li>
             <a href="#" aria-label="Facebook"
@@ -583,10 +620,9 @@
           </li>
         </ul>
       </div>
-      <p class="attribution text-white text-center mt-8 -mx-[113px]">
+      <p class="attribution -mx-[113px] mt-8 text-center text-white">
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge"
-          >Frontend Mentor</a
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
         >. Coded by
         <a href="https://www.frontendmentor.io/profile/jonghwascript"
           >jonghwascript</a

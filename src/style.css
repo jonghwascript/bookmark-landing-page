@@ -31,8 +31,8 @@ body {
   }
 
   .c-feature-panel__visual {
-    @apply relative flow-root;
-    margin-bottom: calc(100% * var(--feature-image-ratio) * 0.16);
+    @apply relative aspect-[536/416] self-start w-full;
+    margin-bottom: calc(100% * 416 / 536 * 0.16);
   }
 
   .c-feature-panel__visual::before {
@@ -43,11 +43,11 @@ body {
   }
 
   .c-feature-panel__image {
-    @apply relative h-auto w-full;
+    @apply absolute inset-0 h-full w-full object-contain;
   }
 
   .c-feature-panel__body {
-    @apply flex flex-col items-center gap-4;
+    @apply flex flex-col items-center gap-4 lg:items-start lg:justify-center;
   }
 
   .c-feature-panel__link {
@@ -120,11 +120,11 @@ body {
   }
 
   .c-title {
-    @apply text-center font-rubik text-[30px]/[1.35] font-medium text-pretty;
+    @apply text-center font-rubik text-[30px]/[1.35] font-medium text-pretty lg:w-full lg:text-left;
   }
 
   .c-description {
-    @apply text-center font-rubik text-[15px]/[1.65] font-normal text-blue-950;
+    @apply text-center font-rubik text-[15px]/[1.65] font-normal text-blue-950 lg:text-left lg:max-w-[40ch];
   }
 
   .c-download__list {

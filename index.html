@@ -22,7 +22,7 @@
     <a class="c-skip-link sr-only focus:not-sr-only" href="#main"
       >Skip to main content</a
     >
-    <header class="c-site-header page-container mt-10 px-8">
+    <header class="c-site-header page-container mt-10 px-8 md:px-20">
       <div class="flex flex-wrap justify-between">
         <a href="/" aria-label="Bookmark home"
           ><img src="./images/logo-bookmark.svg" alt="" width="148" height="25"
@@ -52,8 +52,9 @@
     </header>
     <aside
       id="mobile-menu"
-      class="fixed inset-y-0 right-0 z-50 block w-screen flex flex-col h-[100dvh] pb-12 bg-blue-950/98
-        px-[calc((100vw-82vw)/2)] pt-10 shadow-lg md:hidden"
+      class="fixed inset-y-0 right-0 z-50 block flex h-[100dvh] w-screen
+        flex-col bg-blue-950/98 px-[calc((100vw-82vw)/2)] pt-10 pb-12 shadow-lg
+        lg:hidden"
       hidden
     >
       <div class="flex justify-between">
@@ -94,21 +95,24 @@
         <ul class="flex flex-col items-center">
           <li class="w-full border-y border-[#979797] py-6 text-center">
             <a
-              class="font-rubik text-[20px]/[17px] tracking-[2.31px] text-white"
+              class="font-rubik text-[20px]/[17px] tracking-[2.31px] text-white
+                uppercase"
               href="#features"
               >Features</a
             >
           </li>
           <li class="w-full border-y border-[#979797] py-6 text-center">
             <a
-              class="font-rubik text-[20px]/[17px] tracking-[2.31px] text-white"
+              class="font-rubik text-[20px]/[17px] tracking-[2.31px] text-white
+                uppercase"
               href="#download"
               >Pricing</a
             >
           </li>
           <li class="w-full border-y border-[#979797] py-6 text-center">
             <a
-              class="font-rubik text-[20px]/[17px] tracking-[2.31px] text-white"
+              class="font-rubik text-[20px]/[17px] tracking-[2.31px] text-white
+                uppercase"
               href="#contact"
               >Contact</a
             >
@@ -116,14 +120,18 @@
           <li class="w-full py-6 text-center">
             <a
               class="block rounded-[5px] border border-white py-[15.5px]
-                font-rubik text-[20px]/[17px] tracking-[2.31px] text-white"
+                font-rubik text-[20px]/[17px] tracking-[2.31px] text-white
+                uppercase"
               href="#"
               >Login</a
             >
           </li>
         </ul>
       </nav>
-      <ul class="c-site-footer__social flex items-center justify-center gap-10 mt-auto">
+      <ul
+        class="c-site-footer__social mt-auto flex items-center justify-center
+          gap-10"
+      >
         <li>
           <a href="#" aria-label="Facebook"
             ><img
@@ -143,10 +151,9 @@
     <main id="main" class="mt-23">
       <section class="c-hero flex flex-col gap-12" aria-labelledby="hero-title">
         <div
-          class="relative grid w-full place-items-center px-[18px]
-            before:absolute before:right-0 before:bottom-0 before:h-[78%]
-            before:w-[76%] before:rounded-l-[316.5px] before:bg-blue-600
-            before:content-['']"
+          class="relative grid w-full place-items-center px-4.5 before:absolute
+            before:right-0 before:bottom-0 before:h-[78%] before:w-[76%]
+            before:rounded-l-[316.5px] before:bg-blue-600 before:content-['']"
         >
           <!-- prettier-ignore -->
           <svg xmlns="http://www.w3.org/2000/svg" class="
@@ -194,7 +201,7 @@
         </div>
       </section>
       <section
-        class="c-features page-container mt-32 px-8"
+        class="c-features page-container mt-32 px-8 md:px-20"
         id="features"
         aria-labelledby="features-title"
       >
@@ -205,8 +212,11 @@
           them on the go.
         </p>
         <nav aria-label="Features" class="col-start-2 mt-8 w-full">
-          <ul class="flex flex-col items-stretch justify-center text-center">
-            <li class="c-feature-divider">
+          <ul
+            class="flex flex-col items-stretch justify-center text-center
+              md:flex-row md:justify-start"
+          >
+            <li class="c-feature-divider md:flex-1">
               <a
                 href="#simple-bookmarking"
                 class="c-feature-link"
@@ -214,12 +224,12 @@
                 >Simple Bookmarking</a
               >
             </li>
-            <li class="c-feature-divider">
+            <li class="c-feature-divider md:flex-1">
               <a href="#speedy-searching" class="c-feature-link"
                 >Speedy Searching</a
               >
             </li>
-            <li class="c-feature-divider">
+            <li class="c-feature-divider md:flex-1">
               <a href="#easy-sharing" class="c-feature-link">Easy Sharing</a>
             </li>
           </ul>
@@ -326,8 +336,8 @@
           We’ve got more browsers in the pipeline. Please do let us know if
           you’ve got a favourite you’d like us to prioritize.
         </p>
-        <ul class="c-download__list mt-10">
-          <li>
+        <ul class="c-download__list mt-10 md:flex md:flex-row md:gap-2">
+          <li class="md:flex-1">
             <article class="c-download-card bg-white shadow-soft-blue">
               <div class="c-download-card__body">
                 <img
@@ -348,7 +358,7 @@
               >
             </article>
           </li>
-          <li>
+          <li class="md:flex-1">
             <article class="c-download-card bg-white shadow-soft-blue">
               <div class="c-download-card__body">
                 <img
@@ -369,7 +379,7 @@
               >
             </article>
           </li>
-          <li>
+          <li class="md:flex-1">
             <article class="c-download-card">
               <div class="c-download-card__body">
                 <img
@@ -394,8 +404,8 @@
       </section>
       <!-- Frequently Asked Questions -->
       <section
-        class="c-faq page-container mt-32 flex flex-col items-center gap-14
-          px-8"
+        class="c-faq page-container mt-32 flex flex-col items-center gap-14 px-8
+          md:px-20"
         aria-labelledby="faq-title"
       >
         <div class="flex flex-col gap-4">
@@ -458,7 +468,7 @@
       <!-- CTA Section -->
       <section
         class="c-contact page-container mt-32 flex flex-col gap-8 bg-blue-600
-          px-8 py-[49px]"
+          px-8 py-[49px] md:px-20"
         id="contact"
         aria-labelledby="contact-title"
       >
@@ -473,14 +483,14 @@
             Stay up-to-date with what we’re doing
           </h2>
         </div>
-        <form class="flex flex-col gap-4">
+        <form class="flex flex-col gap-4 md:flex-row">
           <label class="sr-only" for="email">Email address</label>
           <input
             id="email"
             name="email"
             class="w-full rounded-[5px] bg-white px-4 py-[11.6px]
               placeholder:font-rubik placeholder:text-[15px]/[1.6]
-              placeholder:font-normal"
+              placeholder:font-normal md:basis-[68%]"
             type="email"
             autocomplete="email"
             placeholder="Enter your email address"
@@ -491,7 +501,7 @@
           <button
             type="submit"
             class="w-full rounded-[5px] bg-red-400 px-4 py-[11.6px] font-rubik
-              text-[15px]/[2.0] font-medium text-white"
+              text-[15px]/[2.0] font-medium text-white md:basis-[32%]"
           >
             Contact Us
           </button>
@@ -501,7 +511,7 @@
     <footer
       class="c-site-footer page-container bg-blue-950 px-[113px] py-[33px]"
     >
-      <div class="flex flex-col items-center gap-12">
+      <div class="flex flex-col items-center gap-12 md:flex-row">
         <a href="/" aria-label="Bookmark home"
           ><svg
             width="148"
@@ -526,24 +536,24 @@
           </svg>
         </a>
         <nav aria-label="Footer">
-          <ul class="flex flex-col items-center gap-6">
+          <ul class="flex flex-col items-center gap-6 md:flex-row">
             <li class="text-center">
               <a
-                class="font-rubik text-[15px]/[1.65] text-white"
+                class="font-rubik text-[15px]/[1.65] text-white uppercase"
                 href="#features"
                 >Features</a
               >
             </li>
             <li class="text-center">
               <a
-                class="font-rubik text-[15px]/[1.65] text-white"
+                class="font-rubik text-[15px]/[1.65] text-white uppercase"
                 href="#download"
                 >Pricing</a
               >
             </li>
             <li class="text-center">
               <a
-                class="font-rubik text-[15px]/[1.65] text-white"
+                class="font-rubik text-[15px]/[1.65] text-white uppercase"
                 href="#contact"
                 >Contact</a
               >
@@ -551,7 +561,7 @@
           </ul>
         </nav>
         <ul
-          class="c-site-footer__social flex items-center justify-center gap-10"
+          class="c-site-footer__social flex items-center justify-center gap-10 md:gap-6"
         >
           <li>
             <a href="#" aria-label="Facebook"
@@ -572,16 +582,16 @@
             /></a>
           </li>
         </ul>
-        <p class="attribution">
-          Challenge by
-          <a href="https://www.frontendmentor.io?ref=challenge"
-            >Frontend Mentor</a
-          >. Coded by
-          <a href="https://www.frontendmentor.io/profile/jonghwascript"
-            >jonghwascript</a
-          >.
-        </p>
       </div>
+      <p class="attribution text-white text-center mt-8 -mx-[113px]">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/jonghwascript"
+          >jonghwascript</a
+        >.
+      </p>
     </footer>
   </body>
 </html>

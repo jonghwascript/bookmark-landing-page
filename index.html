@@ -22,7 +22,7 @@
     <a class="c-skip-link sr-only focus:not-sr-only" href="#main"
       >Skip to main content</a
     >
-    <header class="c-site-header mx-auto mt-10 w-[min(100%,1275px)] pr-4 pl-4">
+    <header class="c-site-header page-container mt-10 px-8">
       <div class="flex flex-wrap justify-between">
         <a href="/" aria-label="Bookmark home"
           ><img src="./images/logo-bookmark.svg" alt="" width="148" height="25"
@@ -54,12 +54,17 @@
       <section class="c-hero flex flex-col gap-12" aria-labelledby="hero-title">
         <div
           class="relative grid w-full place-items-center px-[18px]
-            before:absolute before:top-[52px] before:right-0 before:h-[203px]
-            before:w-[288px] before:rounded-l-[316.5px] before:bg-blue-600
+            before:absolute before:right-0 before:bottom-0 before:h-[78%]
+            before:w-[76%] before:rounded-l-[316.5px] before:bg-blue-600
             before:content-['']"
         >
           <!-- prettier-ignore -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="max-w-full w-full h-auto relative"
+          <svg xmlns="http://www.w3.org/2000/svg" class="
+            relative
+            h-auto
+            w-full
+            max-w-full
+          "
          xmlns:xlink="http://www.w3.org/1999/xlink" width="657" height="466" viewBox="0 0 657 466"><defs>
           <filter id="a" width="118%" height="126.9%" x="-9%" y="-5.7%" filterUnits="objectBoundingBox">
             <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
@@ -72,29 +77,26 @@
           </filter>
           <rect id="c" width="578" height="385" rx="26"/><filter id="b" width="126%" height="139%" x="-13%" y="-11.7%" filterUnits="objectBoundingBox"><feOffset dy="30" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="20"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.18243335 0 0 0 0 0.230632694 0 0 0 0 0.506057518 0 0 0 0.200120192 0"/></filter><linearGradient id="d" x1="99.013%" x2="2.544%" y1="71.675%" y2="29.014%"><stop offset="0%" stop-color="#151515"/><stop offset="100%" stop-color="#3D3D3D"/></linearGradient><rect id="e" width="536" height="346" y="3" rx="8"/></defs><g fill="none" fill-rule="evenodd" filter="url(#a)" transform="translate(39 9)"><g transform="translate(.5 .5)"><g fill-rule="nonzero"><use fill="#000" filter="url(#b)" xlink:href="#c"/><use fill="#777" xlink:href="#c"/></g><rect width="574.23" height="381.865" x="2" y="2" fill="url(#d)" fill-rule="nonzero" rx="25"/><g transform="translate(21.03 16.303)"><rect width="471.463" height="353.756" x="33" fill="#2A2A2A" fill-rule="nonzero" opacity=".1" rx="5"/><mask id="f" fill="#fff"><use xlink:href="#e"/></mask><use fill="#E8EAF6" fill-rule="nonzero" xlink:href="#e"/><g mask="url(#f)"><path fill="#5267DF" d="M-3.53 3.197h547v59h-547z"/><g transform="translate(22.47 17.197)" fill="#FFF"><circle cx="16" cy="16" r="16" opacity=".245"/><circle cx="477" cy="16" r="16" opacity=".104"/><g transform="translate(47 6)"><rect width="120" height="6" opacity=".75" rx="3"/><rect width="64" height="6" y="14" opacity=".25" rx="3"/></g></g></g><g mask="url(#f)"><g transform="translate(57 96)"><rect width="261" height="316" fill="#FFF" rx="8"/><rect width="128" height="316" x="295" fill="#FFF" rx="8"/><rect width="120" height="6" x="78.47" y="38.197" fill="#242A45" opacity=".5" rx="3"/></g></g></g></g><g transform="translate(110 135)"><circle cx="16" cy="26" r="16" fill="#F98E5D"/><rect width="88" height="6" x="284" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="20" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="40" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="60" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="94" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="114" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="134" fill="#242A45" opacity=".25" rx="3"/><rect width="64" height="6" x="47" y="30" fill="#242A45" opacity=".25" rx="3"/></g><g transform="translate(110 201)"><circle cx="16" cy="16" r="16" fill="#6AC6D6"/><rect width="120" height="6" x="47" y="6" fill="#242A45" opacity=".5" rx="3"/><rect width="64" height="6" x="47" y="20" fill="#242A45" opacity=".25" rx="3"/></g><g transform="translate(110 257)"><circle cx="16" cy="16" r="16" fill="#A47ED4"/><rect width="120" height="6" x="47" y="6" fill="#242A45" opacity=".5" rx="3"/><rect width="64" height="6" x="47" y="20" fill="#242A45" opacity=".25" rx="3"/></g><g transform="translate(110 313)"><circle cx="16" cy="16" r="16" fill="#EC7878"/><rect width="120" height="6" x="47" y="6" fill="#242A45" opacity=".5" rx="3"/><rect width="64" height="6" x="47" y="20" fill="#242A45" opacity=".25" rx="3"/></g></g></svg>
         </div>
-        <div class="mx-auto flex w-[min(100%,1275px)] flex-col gap-6 px-[31px]">
-          <h1
-            id="hero-title"
-            class="text-center text-[30px]/[1.35] font-medium"
-          >
+        <div class="page-container flex flex-col gap-6 px-[31px]">
+          <h1 id="hero-title" class="c-title">
             A Simple Bookmark
             <span class="block">Manager</span>
           </h1>
-          <p class="text-center text-[15px]/[1.65] text-blue-950">
+          <p class="c-description">
             A clean and simple interface to organize your favourite websites.
             Open a new browser tab and see your sites load instantly. Try it for
             free.
           </p>
-          <div class="flex gap-4">
+          <div class="flex flex-wrap justify-center gap-4">
             <a
-              class="flex-1 rounded-[5px] bg-blue-600 px-[14.5px] py-[9px]
-                text-[15px]/[2.0] text-white"
+              class="shrink-0 rounded-[5px] bg-blue-600 px-[14.5px] py-[9px]
+                font-rubik text-[15px]/[2.0] font-medium text-white"
               href="#download"
               >Get it on Chrome</a
             >
             <a
-              class="flex-1 rounded-[5px] bg-grey-50 px-[14.5px] py-[9px]
-                text-[15px]/[2.0] text-blue-950"
+              class="rounded-[5px] bg-grey-50 px-[15px] py-[9px] font-rubik
+                text-[15px]/[2.0] font-medium text-blue-950"
               href="#download"
               >Get it on Firefox</a
             >
@@ -102,109 +104,152 @@
         </div>
       </section>
       <section
-        class="c-features"
+        class="c-features page-container mt-32 px-8"
         id="features"
         aria-labelledby="features-title"
       >
-        <h2 id="features-title">Features</h2>
-        <p>
+        <h2 id="features-title" class="c-title">Features</h2>
+        <p class="c-description mt-4">
           Our aim is to make it quick and easy for you to access your favourite
           websites. Your bookmarks sync between your devices so you can access
           them on the go.
         </p>
-        <nav aria-label="Features">
-          <ul>
-            <li>
-              <a href="#simple-bookmarking" aria-current="location"
+        <nav aria-label="Features" class="col-start-2 mt-8 w-full">
+          <ul class="flex flex-col items-stretch justify-center text-center">
+            <li class="c-feature-divider">
+              <a
+                href="#simple-bookmarking"
+                class="c-feature-link"
+                aria-current="location"
                 >Simple Bookmarking</a
               >
             </li>
-            <li><a href="#speedy-searching">Speedy Searching</a></li>
-            <li><a href="#easy-sharing">Easy Sharing</a></li>
+            <li class="c-feature-divider">
+              <a href="#speedy-searching" class="c-feature-link"
+                >Speedy Searching</a
+              >
+            </li>
+            <li class="c-feature-divider">
+              <a href="#easy-sharing" class="c-feature-link">Easy Sharing</a>
+            </li>
           </ul>
         </nav>
-        <section id="simple-bookmarking" aria-labelledby="simple-title">
+      </section>
+      <!-- Bookmark in one click< -->
+      <section
+        class="c-feature-panel page-container mt-11"
+        id="simple-bookmarking"
+        aria-labelledby="simple-title"
+      >
+        <div
+          class="c-feature-panel__visual"
+          style="--feature-image-ratio: 346 / 536"
+        >
           <img
             src="./images/illustration-features-tab-1.svg"
             alt="Bookmark interface showing a saved website list"
             width="536"
             height="346"
+            class="c-feature-panel__image"
           />
-          <div>
-            <h3 id="simple-title">Bookmark in one click</h3>
-            <p>
-              Organize your bookmarks however you like. Our simple drag-and-drop
-              interface gives you complete control over how you manage your
-              favourite sites.
-            </p>
-            <a href="#"
-              >More Info<span class="sr-only">
-                about simple bookmarking</span
-              ></a
-            >
-          </div>
-        </section>
-        <section id="speedy-searching" aria-labelledby="search-title">
+        </div>
+        <div class="c-feature-panel__body">
+          <h3 class="c-title" id="simple-title">Bookmark in one click</h3>
+          <p class="c-description">
+            Organize your bookmarks however you like. Our simple drag-and-drop
+            interface gives you complete control over how you manage your
+            favourite sites.
+          </p>
+          <a href="#" class="c-feature-panel__link"
+            >More Info<span class="sr-only"> about simple bookmarking</span></a
+          >
+        </div>
+      </section>
+      <!-- Intelligent search -->
+      <section
+        class="c-feature-panel page-container mt-[128px]"
+        id="speedy-searching"
+        aria-labelledby="search-title"
+      >
+        <div
+          class="c-feature-panel__visual"
+          style="--feature-image-ratio: 416 / 478"
+        >
           <img
             src="./images/illustration-features-tab-2.svg"
             alt="Bookmark interface with a search result"
             width="478"
             height="416"
+            class="c-feature-panel__image"
           />
-          <div>
-            <h3 id="search-title">Intelligent search</h3>
-            <p>
-              Our powerful search feature will help you find saved sites in no
-              time at all. No need to trawl through all of your bookmarks.
-            </p>
-            <a href="#"
-              >More Info<span class="sr-only">
-                about intelligent search</span
-              ></a
-            >
-          </div>
-        </section>
-        <section id="easy-sharing" aria-labelledby="sharing-title">
+        </div>
+        <div class="c-feature-panel__body">
+          <h3 id="search-title" class="c-title">Intelligent search</h3>
+          <p class="c-description">
+            Our powerful search feature will help you find saved sites in no
+            time at all. No need to trawl through all of your bookmarks.
+          </p>
+          <a href="#" class="c-feature-panel__link"
+            >More Info<span class="sr-only"> about intelligent search</span></a
+          >
+        </div>
+      </section>
+      <!-- Share your bookmarks -->
+      <section
+        class="c-feature-panel page-container mt-[128px]"
+        id="easy-sharing"
+        aria-labelledby="sharing-title"
+      >
+        <div
+          class="c-feature-panel__visual"
+          style="--feature-image-ratio: 380 / 440"
+        >
           <img
             src="./images/illustration-features-tab-3.svg"
             alt="Bookmark interface showing a shared collection"
             width="440"
             height="380"
+            class="c-feature-panel__image"
           />
-          <div>
-            <h3 id="sharing-title">Share your bookmarks</h3>
-            <p>
-              Easily share your bookmarks and collections with others. Create a
-              shareable link that you can send at the click of a button.
-            </p>
-            <a href="#"
-              >More Info<span class="sr-only"> about sharing bookmarks</span></a
-            >
-          </div>
-        </section>
+        </div>
+        <div class="c-feature-panel__body">
+          <h3 id="sharing-title" class="c-title">Share your bookmarks</h3>
+          <p class="c-description">
+            Easily share your bookmarks and collections with others. Create a
+            shareable link that you can send at the click of a button.
+          </p>
+          <a href="#" class="c-feature-panel__link"
+            >More Info<span class="sr-only"> about sharing bookmarks</span></a
+          >
+        </div>
       </section>
+      <!-- Download the extension -->
       <section
-        class="c-download"
+        class="c-download page-container mt-[133px] px-8"
         id="download"
         aria-labelledby="download-title"
       >
-        <h2 id="download-title">Download the extension</h2>
-        <p>
+        <h2 id="download-title" class="c-title">Download the extension</h2>
+        <p class="c-description mt-4">
           We’ve got more browsers in the pipeline. Please do let us know if
           you’ve got a favourite you’d like us to prioritize.
         </p>
-        <ul class="c-download__list">
+        <ul class="c-download__list mt-10">
           <li>
-            <article>
-              <img
-                src="./images/logo-chrome.svg"
-                alt=""
-                width="102"
-                height="100"
-              />
-              <h3>Add to Chrome</h3>
-              <p>Minimum version 62</p>
-              <a href="#"
+            <article class="c-download-card bg-white shadow-soft-blue">
+              <div class="c-download-card__body">
+                <img
+                  src="./images/logo-chrome.svg"
+                  alt=""
+                  width="102"
+                  height="100"
+                />
+                <div class="c-download-card__details">
+                  <h3 class="c-download-card__title">Add to Chrome</h3>
+                  <p class="c-download-card__description">Minimum version 62</p>
+                </div>
+              </div>
+              <a href="#" class="c-download__link"
                 >Add &amp; Install Extension<span class="sr-only">
                   for Chrome</span
                 ></a
@@ -212,16 +257,20 @@
             </article>
           </li>
           <li>
-            <article>
-              <img
-                src="./images/logo-firefox.svg"
-                alt=""
-                width="105"
-                height="100"
-              />
-              <h3>Add to Firefox</h3>
-              <p>Minimum version 55</p>
-              <a href="#"
+            <article class="c-download-card bg-white shadow-soft-blue">
+              <div class="c-download-card__body">
+                <img
+                  src="./images/logo-firefox.svg"
+                  alt=""
+                  width="105"
+                  height="100"
+                />
+                <div class="c-download-card__details">
+                  <h3 class="c-download-card__title">Add to Firefox</h3>
+                  <p class="c-download-card__description">Minimum version 55</p>
+                </div>
+              </div>
+              <a href="#" class="c-download__link"
                 >Add &amp; Install Extension<span class="sr-only">
                   for Firefox</span
                 ></a
@@ -229,16 +278,20 @@
             </article>
           </li>
           <li>
-            <article>
-              <img
-                src="./images/logo-opera.svg"
-                alt=""
-                width="96"
-                height="100"
-              />
-              <h3>Add to Opera</h3>
-              <p>Minimum version 46</p>
-              <a href="#"
+            <article class="c-download-card">
+              <div class="c-download-card__body">
+                <img
+                  src="./images/logo-opera.svg"
+                  alt=""
+                  width="96"
+                  height="100"
+                />
+                <div class="c-download-card__details">
+                  <h3 class="c-download-card__title">Add to Opera</h3>
+                  <p class="c-download-card__description">Minimum version 46</p>
+                </div>
+              </div>
+              <a href="#" class="c-download__link"
                 >Add &amp; Install Extension<span class="sr-only">
                   for Opera</span
                 ></a
@@ -247,24 +300,33 @@
           </li>
         </ul>
       </section>
-      <section class="c-faq" aria-labelledby="faq-title">
-        <h2 id="faq-title">Frequently Asked Questions</h2>
-        <p>
-          Here are some of our FAQs. If you have any other questions you’d like
-          answered please feel free to email us.
-        </p>
-        <div class="c-faq__list">
-          <details>
-            <summary>What is Bookmark?</summary>
-            <p>
+      <!-- Frequently Asked Questions -->
+      <section
+        class="c-faq page-container mt-32 flex flex-col items-center gap-14
+          px-8"
+        aria-labelledby="faq-title"
+      >
+        <div class="flex flex-col gap-4">
+          <h2 id="faq-title" class="c-title">Frequently Asked Questions</h2>
+          <p class="c-description">
+            Here are some of our FAQs. If you have any other questions you’d
+            like answered please feel free to email us.
+          </p>
+        </div>
+        <div class="c-faq__list w-full">
+          <details class="c-accordion">
+            <summary class="c-accordion__summary">What is Bookmark?</summary>
+            <p class="c-accordion__content">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
               tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum
               quis quam ornare mattis.
             </p>
           </details>
-          <details open>
-            <summary>How can I request a new browser?</summary>
-            <p>
+          <details class="c-accordion">
+            <summary class="c-accordion__summary">
+              How can I request a new browser?
+            </summary>
+            <p class="c-accordion__content">
               Vivamus luctus eros aliquet convallis ultricies. Mauris augue
               massa, ultricies non ligula. Suspendisse imperdiet. Vivamus luctus
               eros aliquet convallis ultricies. Mauris augue massa, ultricies
@@ -273,81 +335,159 @@
               Suspendisse imperdiet.
             </p>
           </details>
-          <details>
-            <summary>Is there a mobile app?</summary>
-            <p>
+          <details class="c-accordion">
+            <summary class="c-accordion__summary">
+              Is there a mobile app?
+            </summary>
+            <p class="c-accordion__content">
               Sed consectetur quam id neque fermentum accumsan. Praesent luctus
               vestibulum dolor, ut condimentum urna vulputate eget. Cras in
               ligula quis est pharetra mattis sit amet pharetra purus. Sed
               sollicitudin ex et ultricies bibendum.
             </p>
           </details>
-          <details>
-            <summary>What about other Chromium browsers?</summary>
-            <p>
+          <details class="c-accordion">
+            <summary class="c-accordion__summary">
+              What about other Chromium browsers?
+            </summary>
+            <p class="c-accordion__content">
               Integer condimentum ipsum id imperdiet finibus. Vivamus in
               placerat mi, at euismod dui. Aliquam vitae neque eget nisl gravida
               pellentesque non ut velit.
             </p>
           </details>
         </div>
-        <a href="#"
+        <a href="#" class="c-download__link"
           >More Info<span class="sr-only">
             about frequently asked questions</span
           ></a
         >
       </section>
-      <section class="c-contact" id="contact" aria-labelledby="contact-title">
-        <p>35,000+ already joined</p>
-        <h2 id="contact-title">Stay up-to-date with what we’re doing</h2>
-        <form>
+      <!-- CTA Section -->
+      <section
+        class="c-contact page-container mt-32 flex flex-col gap-8 bg-blue-600
+          px-8 py-[49px]"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div>
+          <p
+            class="text-center font-rubik text-[12px]/[3.0] font-medium
+              tracking-[5px] text-white"
+          >
+            35,000+ already joined
+          </p>
+          <h2 id="contact-title" class="c-title text-white">
+            Stay up-to-date with what we’re doing
+          </h2>
+        </div>
+        <form class="flex flex-col gap-4">
           <label class="sr-only" for="email">Email address</label>
           <input
             id="email"
             name="email"
+            class="w-full rounded-[5px] bg-white px-4 py-[11.6px]
+              placeholder:font-rubik placeholder:text-[15px]/[1.6]
+              placeholder:font-normal"
             type="email"
             autocomplete="email"
-            placeholder="example@email.com"
+            placeholder="Enter your email address"
             required
             aria-describedby="email-error"
           />
           <p id="email-error" hidden>Whoops, make sure it’s an email</p>
-          <button type="submit">Contact Us</button>
+          <button
+            type="submit"
+            class="w-full rounded-[5px] bg-red-400 px-4 py-[11.6px] font-rubik
+              text-[15px]/[2.0] font-medium text-white"
+          >
+            Contact Us
+          </button>
         </form>
       </section>
     </main>
-    <footer class="c-site-footer">
-      <a href="/" aria-label="Bookmark home"
-        ><img src="./images/logo-bookmark.svg" alt="" width="148" height="25"
-      /></a>
-      <nav aria-label="Footer">
-        <ul>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#download">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
+    <footer
+      class="c-site-footer page-container bg-blue-950 px-[113px] py-[33px]"
+    >
+      <div class="flex flex-col items-center gap-12">
+        <a href="/" aria-label="Bookmark home"
+          ><svg
+            width="148"
+            height="25"
+            class="text-white"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g fill="none" fill-rule="evenodd">
+              <path
+                d="M37 6.299h5.227c.746 0 1.434.155 2.062.466.629.311 1.123.735 1.484 1.27s.542 1.12.542 1.754c0 .672-.165 1.254-.495 1.746-.33.491-.762.868-1.297 1.129v.15c.697.248 1.25.643 1.661 1.185.41.541.616 1.191.616 1.95 0 .735-.196 1.385-.588 1.951a3.817 3.817 0 0 1-1.587 1.307c-.665.305-1.403.457-2.212.457H37V6.299zm5.04 5.45c.548 0 .986-.152 1.316-.457.33-.305.495-.688.495-1.148 0-.448-.159-.824-.476-1.13-.318-.304-.738-.457-1.26-.457H39.52v3.192h2.52zm.28 5.619c.61 0 1.086-.159 1.428-.476.342-.317.513-.731.513-1.241 0-.51-.174-.927-.522-1.251-.349-.324-.847-.485-1.494-.485H39.52v3.453h2.8zm12.927 2.595c-1.307 0-2.492-.308-3.556-.924a6.711 6.711 0 0 1-2.511-2.53c-.61-1.07-.915-2.246-.915-3.528 0-1.281.305-2.457.915-3.528a6.711 6.711 0 0 1 2.51-2.529C52.756 6.308 53.94 6 55.248 6c1.306 0 2.492.308 3.556.924a6.711 6.711 0 0 1 2.51 2.53c.61 1.07.915 2.246.915 3.527 0 1.282-.305 2.458-.915 3.528a6.711 6.711 0 0 1-2.51 2.53c-1.064.616-2.25.924-3.556.924zm0-2.39a4.52 4.52 0 0 0 2.258-.578 4.177 4.177 0 0 0 1.615-1.624c.392-.697.588-1.494.588-2.39 0-.896-.196-1.692-.588-2.389a4.177 4.177 0 0 0-1.615-1.624 4.52 4.52 0 0 0-2.258-.579 4.47 4.47 0 0 0-2.25.579 4.195 4.195 0 0 0-1.605 1.624c-.392.697-.588 1.493-.588 2.39 0 .895.196 1.692.588 2.389a4.195 4.195 0 0 0 1.605 1.624 4.47 4.47 0 0 0 2.25.578zm15.353 2.39c-1.307 0-2.492-.308-3.556-.924a6.711 6.711 0 0 1-2.51-2.53c-.61-1.07-.915-2.246-.915-3.528 0-1.281.305-2.457.914-3.528a6.711 6.711 0 0 1 2.511-2.529C68.108 6.308 69.294 6 70.6 6c1.307 0 2.492.308 3.556.924a6.711 6.711 0 0 1 2.51 2.53c.61 1.07.915 2.246.915 3.527 0 1.282-.305 2.458-.914 3.528a6.711 6.711 0 0 1-2.511 2.53c-1.064.616-2.25.924-3.556.924zm0-2.39a4.52 4.52 0 0 0 2.259-.578 4.177 4.177 0 0 0 1.614-1.624c.392-.697.588-1.494.588-2.39 0-.896-.196-1.692-.588-2.389a4.177 4.177 0 0 0-1.614-1.624 4.52 4.52 0 0 0-2.259-.579 4.47 4.47 0 0 0-2.25.579 4.195 4.195 0 0 0-1.605 1.624c-.392.697-.588 1.493-.588 2.39 0 .895.196 1.692.588 2.389a4.195 4.195 0 0 0 1.606 1.624 4.47 4.47 0 0 0 2.249.578zM79.83 6.3h2.52v5.73h.15l4.89-5.73h3.043v.149L85.6 11.973l5.338 7.542v.149h-3.08l-3.994-5.693-1.512 1.773v3.92h-2.52V6.299zM93.779 6h3.248l3.546 9.39h.15L104.268 6h3.267v13.365h-2.501v-6.589l.15-2.221h-.15l-3.398 8.81h-1.96l-3.416-8.81h-.149l.15 2.221v6.59h-2.483V6zm20.8 0h2.894l5.021 13.365h-2.781l-1.12-3.192h-5.115l-1.12 3.192h-2.781L114.579 6zm3.193 7.859l-1.176-3.36-.486-1.606h-.149l-.485 1.606-1.195 3.36h3.49zM124.553 6h4.872c.871 0 1.646.18 2.324.541.678.361 1.204.862 1.577 1.503.374.64.56 1.366.56 2.175 0 .858-.27 1.62-.812 2.286a4.617 4.617 0 0 1-2.044 1.447l-.018.13 3.584 5.134v.15h-2.894l-3.453-5.022h-1.176v5.021h-2.52V6zm4.853 6.03c.573 0 1.04-.175 1.4-.523.361-.349.542-.79.542-1.326 0-.51-.172-.945-.514-1.306-.342-.361-.806-.542-1.39-.542h-2.371v3.696h2.333zm7.23-6.03h2.52v5.73h.15l4.89-5.73h3.043v.15l-4.835 5.525 5.34 7.541v.15h-3.08l-3.996-5.694-1.512 1.773v3.92h-2.52V6z"
+                fill="currentColor"
+                fill-rule="nonzero"
+              />
+              <g>
+                <circle fill="#5267DF" cx="12.5" cy="12.5" r="12.5" />
+                <path
+                  d="M9 9v10l3.54-3.44L16.078 19V9a2 2 0 0 0-2-2H11a2 2 0 0 0-2 2z"
+                  fill="#FFF"
+                />
+              </g>
+            </g>
+          </svg>
+        </a>
+        <nav aria-label="Footer">
+          <ul class="flex flex-col items-center gap-6">
+            <li class="text-center">
+              <a
+                class="font-rubik text-[15px]/[1.65] text-white"
+                href="#features"
+                >Features</a
+              >
+            </li>
+            <li class="text-center">
+              <a
+                class="font-rubik text-[15px]/[1.65] text-white"
+                href="#download"
+                >Pricing</a
+              >
+            </li>
+            <li class="text-center">
+              <a
+                class="font-rubik text-[15px]/[1.65] text-white"
+                href="#contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <ul class="c-site-footer__social flex justify-center gap-10">
+          <li>
+            <a href="#" aria-label="Facebook"
+              ><img
+                src="./images/icon-facebook.svg"
+                alt=""
+                width="24"
+                height="24"
+            /></a>
+          </li>
+          <li>
+            <a href="#" aria-label="Twitter"
+              ><img
+                src="./images/icon-twitter.svg"
+                alt=""
+                width="24"
+                height="20"
+            /></a>
+          </li>
         </ul>
-      </nav>
-      <ul class="c-site-footer__social">
-        <li>
-          <a href="#" aria-label="Facebook"
-            ><img
-              src="./images/icon-facebook.svg"
-              alt=""
-              width="24"
-              height="24"
-          /></a>
-        </li>
-        <li>
-          <a href="#" aria-label="Twitter"
-            ><img src="./images/icon-twitter.svg" alt="" width="24" height="20"
-          /></a>
-        </li>
-      </ul>
-      <p class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
-      </p>
+        <p class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge"
+            >Frontend Mentor</a
+          >. Coded by
+          <a href="https://www.frontendmentor.io/profile/jonghwascript"
+            >jonghwascript</a
+          >.
+        </p>
+      </div>
     </footer>
   </body>
 </html>

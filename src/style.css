@@ -55,7 +55,7 @@ body {
   }
 
   .c-feature-panel__link {
-    @apply rounded-[5px] bg-blue-600 px-[23px] py-[9px] text-center text-white;
+    @apply max-w-full rounded-[5px] bg-blue-600 px-[23px] py-[9px] text-center text-white wrap-anywhere;
   }
 
   .c-accordion {
@@ -63,8 +63,16 @@ body {
   }
 
   .c-accordion__summary {
-    @apply relative cursor-pointer list-none py-4 font-rubik text-[15px]/[1.65]
-      text-blue-950;
+    @apply relative cursor-pointer list-none py-4 pr-[2.25em] font-rubik text-[0.9375rem]/[1.5625rem]
+      text-blue-950 wrap-break-word md:leading-[1.75rem];
+  }
+
+  .c-accordion:first-child > .c-accordion__summary {
+    @apply max-md:pt-0;
+  }
+
+  .c-accordion:first-child > .c-accordion__summary::after {
+    @apply max-md:top-[calc(50%_-_0.5rem)];
   }
 
   .c-accordion__summary::-webkit-details-marker {
@@ -73,7 +81,7 @@ body {
 
   .c-accordion__summary::after {
     content: "";
-    @apply absolute top-1/2 right-4 h-2 w-4 -translate-y-1/2 bg-blue-600
+    @apply absolute top-1/2 right-0 h-2 w-4 -translate-y-1/2 bg-blue-600
       mask-[url(/images/icon-arrow.svg)] mask-contain mask-center
       mask-no-repeat;
   }
@@ -84,12 +92,12 @@ body {
   }
 
   .c-accordion__content {
-    @apply mb-1 font-rubik text-[16px]/[2.25] font-light tracking-[0.5]
-      text-blue-950;
+    @apply mb-1 font-rubik text-[1rem]/[2.25] font-light tracking-[0.5]
+      text-blue-950 wrap-anywhere;
   }
 
   .c-feature-link {
-    @apply relative block w-full font-rubik text-[15px]/[1.65] text-blue-950;
+    @apply relative block w-full font-rubik text-[0.9375rem]/[1.65] text-blue-950 wrap-anywhere;
   }
 
   .c-feature-link::after {
@@ -124,11 +132,11 @@ body {
   }
 
   .c-title {
-    @apply text-center font-rubik text-[30px]/[1.35] font-medium text-pretty lg:w-full lg:text-left;
+    @apply text-center font-rubik text-[1.875rem]/[1.35] font-medium text-pretty wrap-anywhere lg:w-full lg:text-left;
   }
 
   .c-description {
-    @apply text-center font-rubik text-[15px]/[1.65] font-normal text-blue-950 lg:text-left lg:max-w-[40ch];
+    @apply text-center font-rubik text-[0.9375rem]/[1.65] font-normal text-blue-950 wrap-anywhere lg:text-left lg:max-w-[40ch];
   }
 
   .c-download__list {
@@ -136,12 +144,12 @@ body {
   }
 
   .c-download__link {
-    @apply rounded-[5px] bg-blue-600 px-8 py-2 font-rubik text-[15px]/[2.0]
-      font-medium text-white md:px-[8px] md:py-[3px] text-center lg:py-2;
+    @apply rounded-[5px] bg-blue-600 px-8 py-2 font-rubik text-[0.9375rem]/[2.0]
+      font-medium text-white md:px-[8px] md:py-[3px] text-center lg:py-2 wrap-anywhere;
   }
 
   .c-download-card {
-    @apply flex flex-col gap-13 py-8;
+    @apply flex flex-col gap-13 pt-[26px] pb-8 md:pt-8 md:pb-6 lg:pt-[47px] lg:pb-8;
   }
 
   .c-download-card__body {
@@ -155,15 +163,15 @@ body {
   }
 
   .c-download-card__details {
-    @apply flex flex-col gap-2;
+    @apply flex max-w-full flex-col gap-2 wrap-anywhere;
   }
 
   .c-download-card__title {
-    @apply text-center font-rubik text-[24px]/[2.0] font-medium text-blue-950;
+    @apply text-center font-rubik text-[1.5rem]/[2.0] font-medium text-blue-950;
   }
 
   .c-download-card__description {
-    @apply text-center font-rubik text-[15px]/[1.65] font-normal text-blue-950;
+    @apply text-center font-rubik text-[0.9375rem]/[1.65] font-normal text-blue-950;
   }
 }
 

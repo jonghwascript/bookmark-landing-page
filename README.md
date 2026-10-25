@@ -1,113 +1,182 @@
-# Frontend Mentor - Bookmark landing page
+# Frontend Mentor - Bookmark landing page solution
 
-![Design preview for the Bookmark landing page coding challenge](preview.jpg)
+This is a solution to the [Bookmark landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/bookmark-landing-page-5d0b588a9edda32581d29158).
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Layout calculations and percentages](#layout-calculations-and-percentages)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+  - [AI collaboration](#ai-collaboration)
+- [Local development](#local-development)
+- [Deployment](#deployment)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+### The challenge
 
-## The challenge
+Users can:
 
-Your challenge is to build out this landing page and get it looking as close to the design as possible.
+- View responsive layouts for mobile, tablet, and desktop screens.
+- Open and close the mobile navigation menu, including with the Escape key.
+- Switch between feature panels and see the selected feature underlined.
+- Expand FAQ answers.
+- See hover states on links, buttons, and footer social icons.
+- Receive inline feedback when submitting an empty or incorrectly formatted email address.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+The contact form validates email syntax locally. It does not send emails or create subscriptions. Download, login, and social links are demonstration links.
 
-Your users should be able to:
+### Screenshot
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Receive an error message when the newsletter form is submitted if:
-  - The input field is empty
-  - The email address is not formatted correctly
+![Bookmark landing page screenshot](./screenshot.jpg)
 
-For this challenge you'll need to:
+### Links
 
-- Create the rounded blue background shape with code
-- Change the `fill` and `stroke` color of the SVGs at specific points (the challenge can be completed using the single `logo-bookmark.svg` file provided)
+- Repository: [jonghwascript/bookmark-landing-page](https://github.com/jonghwascript/bookmark-landing-page)
+- Deployment URL (available after the first successful deployment): [Bookmark landing page](https://jonghwascript.github.io/bookmark-landing-page/)
 
-### Want some support on the challenge? 
+## My process
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Built with
 
-## Where to find everything
+- Semantic HTML
+- Tailwind CSS v4, custom properties, and component styles
+- Flexbox and a mobile-first responsive layout
+- Vanilla JavaScript
+- Vite v8
+- ESLint and Prettier
+- GitHub Actions and GitHub Pages
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### What I learned
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+Design measurements can be translated into layout relationships. At a viewport width of 375px, 32px side padding leaves 311px for content. Cards can fill the available space while keeping a maximum width of 280px.
 
-If you would like the Figma design file to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+Feature selection uses `aria-current` to keep the visible panel and underline in sync. Email validation uses the input's native validity state with a custom error message, `aria-invalid`, and an alert for assistive technology.
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+Units also depend on context: moving a `20em` width from a 15px input to a 16px wrapper changes it from 300px to 320px. Using `18.75rem` for the wrapper preserves the intended 300px width at the default root font size and keeps the tablet form within its 442px container.
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### Layout calculations and percentages
 
-## Using AI coding assistants
+`calc()` combines lengths and arithmetic. A percentage takes its reference from the property where it is used; it does not always refer to the viewport. `100vw` explicitly means the full viewport width. Tailwind arbitrary values use underscores for spaces, so `calc(50%_-_0.5rem)` becomes `calc(50% - 0.5rem)`.
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+#### Container limits and desktop alignment
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+```css
+width: min(100%, 1275px);
+padding-left: calc(max(0px, (100% - 1275px) / 2) + 80px);
+```
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+The page container fills its containing block up to 1275px and is centered with automatic inline margins. The desktop hero padding reproduces that container's left edge plus an 80px inset. Here, the padding percentage refers to the containing block's width.
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+With a 1440px containing block, the padding is `(1440 - 1275) / 2 + 80 = 162.5px`. Below 1275px, `max(0px, ...)` prevents a negative outer offset, leaving 80px of padding. This rule applies only at the `lg` breakpoint.
 
-## Building your project
+#### Mobile menu padding
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+```css
+padding-inline: calc((100vw - 82vw) / 2);
+```
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+The menu reserves 82% of the viewport width for content and splits the remaining 18% between its sides. Each side receives `9vw`, or 33.75px at a 375px viewport. This is viewport-relative spacing rather than a fixed 32px gutter.
 
-## Deploying your project
+#### Feature image proportions and spacing
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+```css
+aspect-ratio: 536 / 416;
+margin-bottom: calc(100% * 416 / 536 * 0.16);
+```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+The visual's aspect ratio means its height is its width multiplied by `416 / 536`. The margin formula reserves 16% of that calculated height when the visual fills the containing block's width. For a 311px containing block, this is `311 * 416 / 536 * 0.16`, approximately 38.62px.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+Vertical percentage margins also use the containing block's **width**. Once the visual is capped at 536px on larger screens, the margin is still calculated from its containing block, so it is not necessarily 16% of the visual's actual height. The desktop markup resets this margin with `lg:mb-0`.
 
-## Create a custom `README.md`
+#### Decorative backgrounds
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+| Values | Reference and effect |
+| --- | --- |
+| Hero `before:w-[76%]` and `before:h-[78%]` | The absolute background uses 76% of the positioned wrapper's width and 78% of its height, anchored to the bottom right. |
+| Feature `top-[17%]` and `h-[99%]` | The absolute background starts 17% down the visual's height and is 99% as tall as the visual. Its bottom reaches 116% of the visual's height, extending below it. |
+| Hero `lg:basis-[52%]` and `lg:basis-[48%]` | The image and text receive initial flex bases relative to the flex container's inner main size. Flex growth, shrinking, and size constraints can change their final widths. |
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+These percentages control the illustration layout and decorative shapes. Their presence in the implementation does not establish that Figma specifies the same responsive ratios.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+```css
+margin-left: calc((100% - 100vw) / 2);
+/* At viewport widths of 768px and above: */
+margin-left: calc(100% - 100vw);
+```
 
-## Submitting your solution
+These negative margins extend the feature background toward the viewport's left edge. Here, `100%` uses the visual containing block's width. With a 311px visual and a 375px viewport, the first formula gives `(311 - 375) / 2 = -32px`, canceling a centered 32px gutter. The second formula uses the entire width difference; reaching the viewport edge then depends on the visual's actual horizontal position.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+#### Feature underline sizing and centering
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+```css
+width: min(100%, calc(163 / 375 * 100vw));
+left: 50%;
+translate: -50% 0;
+```
 
-## Sharing your solution
+The underline is 163px wide at a 375px viewport, preserving a viewport ratio of approximately 43.47%. `min()` caps it at the link's width. `left: 50%` positions its left edge halfway across the containing link, while the negative translation moves it back by half of its **own** width to center it.
 
-There are multiple places you can share your solution:
+The FAQ arrow uses the same centering principle vertically. Its usual `top: 50%` refers to the summary's height, while `-translate-y-1/2` moves it up by half of the arrow's own height. For the first mobile question, `top: calc(50% - 0.5rem)` compensates for the removed top padding; `0.5rem` is 8px at the default 16px root font size.
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+### Continued development
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+- Add browser coverage for keyboard navigation and responsive behavior.
+- Check layouts with longer content and increased text size.
+- Connect the contact form to a subscription service if this becomes a production site.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+### Useful resources
 
-## Got feedback for us?
+- [Vite deployment guide](https://vite.dev/guide/static-deploy.html#github-pages) — configuring the project base path and GitHub Pages deployment.
+- [Tailwind CSS documentation](https://tailwindcss.com/docs) — utility classes, responsive variants, and custom component styles.
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+### AI collaboration
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+Codex assisted with layout analysis, hover states, email validation and error styling, debugging the tablet form width, and deployment configuration. Changes were reviewed against the project code and checked with production builds.
 
-**Have fun building!** 🚀
+## Local development
+
+Use Node.js 22.12 or later in the Node.js 22 release line, matching the deployment workflow.
+
+```sh
+npm ci
+npm run dev
+```
+
+Open the local URL printed by Vite, including the `/bookmark-landing-page/` base path.
+
+```sh
+npm run build
+npm run preview
+```
+
+The production build is generated in `dist/`. Additional commands:
+
+```sh
+npm run lint
+npm run format:check
+```
+
+## Deployment
+
+The workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) installs locked dependencies, builds the site, and deploys `dist/` to GitHub Pages on pushes to `main`. It can also be run manually from the Actions tab.
+
+1. Push these files to the GitHub repository.
+2. Open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**.
+3. Open **Actions → Deploy to GitHub Pages** and run the workflow, or push another commit to `main`.
+4. After deployment succeeds, open the deployment URL listed above.
+
+The Vite `base` is `/bookmark-landing-page/`. Update it and the deployment URL if the repository name or hosting path changes. No personal access token or custom deployment secret is required; the workflow uses `GITHUB_TOKEN` with Pages deployment permissions.
+
+## Author
+
+- GitHub — [@jonghwascript](https://github.com/jonghwascript)
+- Frontend Mentor — [@jonghwascript](https://www.frontendmentor.io/profile/jonghwascript)

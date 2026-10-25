@@ -24,7 +24,7 @@
     >
     <header class="c-site-header page-container mt-10 px-8 md:px-20">
       <div class="flex flex-wrap items-center justify-between gap-6">
-        <a href="/" aria-label="Bookmark home"
+        <a href="%BASE_URL%" aria-label="Bookmark home"
           ><img src="./images/logo-bookmark.svg" alt="" width="148" height="25"
         /></a>
         <button
@@ -47,39 +47,78 @@
           class="hidden max-w-full min-w-0 lg:block"
         >
           <ul
-            class="flex flex-wrap items-center justify-end gap-12 wrap-anywhere"
+            class="
+              flex
+              flex-wrap
+              items-center
+              justify-end
+              gap-12
+              wrap-anywhere
+            "
           >
             <li>
               <a
-                class="font-rubik text-[0.875rem]/[2.0] tracking-[0.25px]
-                  text-blue-950 uppercase hover:text-red-400"
+                class="
+                  font-rubik
+                  text-[0.875rem]/[2.0]
+                  tracking-[0.25px]
+                  text-blue-950
+                  uppercase
+                  hover:text-red-400
+                "
                 href="#features"
                 >Features</a
               >
             </li>
             <li>
               <a
-                class="font-rubik text-[0.875rem]/[2.0] tracking-[0.25px]
-                  text-blue-950 uppercase hover:text-red-400"
+                class="
+                  font-rubik
+                  text-[0.875rem]/[2.0]
+                  tracking-[0.25px]
+                  text-blue-950
+                  uppercase
+                  hover:text-red-400
+                "
                 href="#download"
                 >Pricing</a
               >
             </li>
             <li>
               <a
-                class="font-rubik text-[0.875rem]/[2.0] tracking-[0.25px]
-                  text-blue-950 uppercase hover:text-red-400"
+                class="
+                  font-rubik
+                  text-[0.875rem]/[2.0]
+                  tracking-[0.25px]
+                  text-blue-950
+                  uppercase
+                  hover:text-red-400
+                "
                 href="#contact"
                 >Contact</a
               >
             </li>
             <li>
               <a
-                class="inline-block max-w-full rounded-[5px] border
-                  border-transparent bg-red-400 px-8 py-2 font-rubik
-                  text-[0.875rem]/[2.0] tracking-[0.25px] text-white uppercase
-                  hover:border hover:border-red-400 hover:bg-transparent
-                  hover:text-red-400"
+                class="
+                  inline-block
+                  max-w-full
+                  rounded-[5px]
+                  border
+                  border-transparent
+                  bg-red-400
+                  px-8
+                  py-2
+                  font-rubik
+                  text-[0.875rem]/[2.0]
+                  tracking-[0.25px]
+                  text-white
+                  uppercase
+                  hover:border
+                  hover:border-red-400
+                  hover:bg-transparent
+                  hover:text-red-400
+                "
                 href="#"
                 >Login</a
               >
@@ -90,13 +129,28 @@
     </header>
     <aside
       id="mobile-menu"
-      class="fixed inset-y-0 right-0 z-50 flex h-[100dvh] w-screen flex-col
-        overflow-y-auto bg-blue-950/98 px-[calc((100vw-82vw)/2)] pt-10 pb-12
-        shadow-lg lg:hidden [&>*]:shrink-0"
+      class="
+        fixed
+        inset-y-0
+        right-0
+        z-50
+        flex
+        h-[100dvh]
+        w-screen
+        flex-col
+        overflow-y-auto
+        bg-blue-950/98
+        px-[calc((100vw-82vw)/2)]
+        pt-10
+        pb-12
+        shadow-lg
+        lg:hidden
+        [&>*]:shrink-0
+      "
       hidden
     >
       <div class="flex justify-between">
-        <a href="/" aria-label="Bookmark home">
+        <a href="%BASE_URL%" aria-label="Bookmark home">
           <svg
             width="148"
             height="25"
@@ -133,33 +187,64 @@
         <ul class="flex flex-col items-center">
           <li class="w-full border-y border-[#979797] py-6 text-center">
             <a
-              class="block font-rubik text-[1.25rem]/[1.5] tracking-[2.31px]
-                wrap-anywhere text-white uppercase"
+              class="
+                block
+                font-rubik
+                text-[1.25rem]/[1.5]
+                tracking-[2.31px]
+                wrap-anywhere
+                text-white
+                uppercase
+              "
               href="#features"
               >Features</a
             >
           </li>
           <li class="w-full border-y border-[#979797] py-6 text-center">
             <a
-              class="block font-rubik text-[1.25rem]/[1.5] tracking-[2.31px]
-                wrap-anywhere text-white uppercase"
+              class="
+                block
+                font-rubik
+                text-[1.25rem]/[1.5]
+                tracking-[2.31px]
+                wrap-anywhere
+                text-white
+                uppercase
+              "
               href="#download"
               >Pricing</a
             >
           </li>
           <li class="w-full border-y border-[#979797] py-6 text-center">
             <a
-              class="block font-rubik text-[1.25rem]/[1.5] tracking-[2.31px]
-                wrap-anywhere text-white uppercase"
+              class="
+                block
+                font-rubik
+                text-[1.25rem]/[1.5]
+                tracking-[2.31px]
+                wrap-anywhere
+                text-white
+                uppercase
+              "
               href="#contact"
               >Contact</a
             >
           </li>
           <li class="w-full py-6 text-center">
             <a
-              class="block rounded-[5px] border border-white py-[15.5px]
-                font-rubik text-[1.25rem]/[1.5] tracking-[2.31px] wrap-anywhere
-                text-white uppercase"
+              class="
+                block
+                rounded-[5px]
+                border
+                border-white
+                py-[15.5px]
+                font-rubik
+                text-[1.25rem]/[1.5]
+                tracking-[2.31px]
+                wrap-anywhere
+                text-white
+                uppercase
+              "
               href="#"
               >Login</a
             >
@@ -167,8 +252,14 @@
         </ul>
       </nav>
       <ul
-        class="c-site-footer__social mt-auto flex items-center justify-center
-          gap-10"
+        class="
+          c-site-footer__social
+          mt-auto
+          flex
+          items-center
+          justify-center
+          gap-10
+        "
       >
         <li>
           <a href="#" aria-label="Facebook"
@@ -188,16 +279,35 @@
     </aside>
     <main id="main" class="mt-23 lg:mt-36">
       <section
-        class="c-hero reading-flow-flex-visual flex flex-col gap-12
-          lg:flex-row-reverse lg:justify-start lg:gap-0
-          lg:pl-[calc(max(0px,(100%_-_1275px)/2)_+_80px)]"
+        class="
+          c-hero
+          reading-flow-flex-visual
+          flex
+          flex-col
+          gap-12
+          lg:flex-row-reverse
+          lg:justify-start
+          lg:gap-0
+          lg:pl-[calc(max(0px,(100%_-_1275px)/2)_+_80px)]
+        "
         aria-labelledby="hero-title"
       >
         <div
-          class="relative w-full px-4.5 before:absolute before:right-0
-            before:bottom-0 before:h-[78%] before:w-[76%]
-            before:rounded-l-[316.5px] before:bg-blue-600 before:content-['']
-            lg:grow lg:basis-[52%]"
+          class="
+            relative
+            w-full
+            px-4.5
+            before:absolute
+            before:right-0
+            before:bottom-0
+            before:h-[78%]
+            before:w-[76%]
+            before:rounded-l-[316.5px]
+            before:bg-blue-600
+            before:content-['']
+            lg:grow
+            lg:basis-[52%]
+          "
         >
           <!-- prettier-ignore -->
           <svg xmlns="http://www.w3.org/2000/svg" class="
@@ -220,8 +330,17 @@
           <rect id="c" width="578" height="385" rx="26"/><filter id="b" width="126%" height="139%" x="-13%" y="-11.7%" filterUnits="objectBoundingBox"><feOffset dy="30" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="20"/><feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.18243335 0 0 0 0 0.230632694 0 0 0 0 0.506057518 0 0 0 0.200120192 0"/></filter><linearGradient id="d" x1="99.013%" x2="2.544%" y1="71.675%" y2="29.014%"><stop offset="0%" stop-color="#151515"/><stop offset="100%" stop-color="#3D3D3D"/></linearGradient><rect id="e" width="536" height="346" y="3" rx="8"/></defs><g fill="none" fill-rule="evenodd" filter="url(#a)" transform="translate(39 9)"><g transform="translate(.5 .5)"><g fill-rule="nonzero"><use fill="#000" filter="url(#b)" xlink:href="#c"/><use fill="#777" xlink:href="#c"/></g><rect width="574.23" height="381.865" x="2" y="2" fill="url(#d)" fill-rule="nonzero" rx="25"/><g transform="translate(21.03 16.303)"><rect width="471.463" height="353.756" x="33" fill="#2A2A2A" fill-rule="nonzero" opacity=".1" rx="5"/><mask id="f" fill="#fff"><use xlink:href="#e"/></mask><use fill="#E8EAF6" fill-rule="nonzero" xlink:href="#e"/><g mask="url(#f)"><path fill="#5267DF" d="M-3.53 3.197h547v59h-547z"/><g transform="translate(22.47 17.197)" fill="#FFF"><circle cx="16" cy="16" r="16" opacity=".245"/><circle cx="477" cy="16" r="16" opacity=".104"/><g transform="translate(47 6)"><rect width="120" height="6" opacity=".75" rx="3"/><rect width="64" height="6" y="14" opacity=".25" rx="3"/></g></g></g><g mask="url(#f)"><g transform="translate(57 96)"><rect width="261" height="316" fill="#FFF" rx="8"/><rect width="128" height="316" x="295" fill="#FFF" rx="8"/><rect width="120" height="6" x="78.47" y="38.197" fill="#242A45" opacity=".5" rx="3"/></g></g></g></g><g transform="translate(110 135)"><circle cx="16" cy="26" r="16" fill="#F98E5D"/><rect width="88" height="6" x="284" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="20" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="40" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="60" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="94" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="114" fill="#242A45" opacity=".25" rx="3"/><rect width="88" height="6" x="284" y="134" fill="#242A45" opacity=".25" rx="3"/><rect width="64" height="6" x="47" y="30" fill="#242A45" opacity=".25" rx="3"/></g><g transform="translate(110 201)"><circle cx="16" cy="16" r="16" fill="#6AC6D6"/><rect width="120" height="6" x="47" y="6" fill="#242A45" opacity=".5" rx="3"/><rect width="64" height="6" x="47" y="20" fill="#242A45" opacity=".25" rx="3"/></g><g transform="translate(110 257)"><circle cx="16" cy="16" r="16" fill="#A47ED4"/><rect width="120" height="6" x="47" y="6" fill="#242A45" opacity=".5" rx="3"/><rect width="64" height="6" x="47" y="20" fill="#242A45" opacity=".25" rx="3"/></g><g transform="translate(110 313)"><circle cx="16" cy="16" r="16" fill="#EC7878"/><rect width="120" height="6" x="47" y="6" fill="#242A45" opacity=".5" rx="3"/><rect width="64" height="6" x="47" y="20" fill="#242A45" opacity=".25" rx="3"/></g></g></svg>
         </div>
         <div
-          class="page-container flex flex-col gap-6 px-[31px] md:max-w-[540px]
-            md:px-0 lg:m-0 lg:basis-[48%]"
+          class="
+            page-container
+            flex
+            flex-col
+            gap-6
+            px-[31px]
+            md:max-w-[540px]
+            md:px-0
+            lg:m-0
+            lg:basis-[48%]
+          "
         >
           <h1
             id="hero-title"
@@ -237,18 +356,48 @@
           </p>
           <div class="flex flex-wrap justify-center gap-4 lg:justify-start">
             <a
-              class="max-w-full min-w-0 rounded-[5px] border border-transparent
-                bg-blue-600 px-[14.5px] py-[9px] text-center font-rubik
-                text-[0.9375rem]/[2.0] font-medium wrap-anywhere text-white
-                hover:border-blue-600 hover:bg-transparent hover:text-blue-600"
+              class="
+                max-w-full
+                min-w-0
+                rounded-[5px]
+                border
+                border-transparent
+                bg-blue-600
+                px-[14.5px]
+                py-[9px]
+                text-center
+                font-rubik
+                text-[0.9375rem]/[2.0]
+                font-medium
+                wrap-anywhere
+                text-white
+                hover:border-blue-600
+                hover:bg-transparent
+                hover:text-blue-600
+              "
               href="#download"
               >Get it on Chrome</a
             >
             <a
-              class="max-w-full min-w-0 rounded-[5px] border border-transparent
-                bg-grey-50 px-[15px] py-[9px] text-center font-rubik
-                text-[0.9375rem]/[2.0] font-medium wrap-anywhere text-blue-950
-                hover:border-grey-600 hover:bg-transparent hover:text-grey-600"
+              class="
+                max-w-full
+                min-w-0
+                rounded-[5px]
+                border
+                border-transparent
+                bg-grey-50
+                px-[15px]
+                py-[9px]
+                text-center
+                font-rubik
+                text-[0.9375rem]/[2.0]
+                font-medium
+                wrap-anywhere
+                text-blue-950
+                hover:border-grey-600
+                hover:bg-transparent
+                hover:text-grey-600
+              "
               href="#download"
               >Get it on Firefox</a
             >
@@ -263,13 +412,24 @@
       >
         <h2
           id="features-title"
-          class="c-title leading-[2.5625rem] md:leading-[2.5rem] lg:text-center"
+          class="
+            c-title
+            leading-[2.5625rem]
+            md:leading-[2.5rem]
+            lg:text-center
+          "
         >
           Features
         </h2>
         <p
-          class="c-description mt-4 w-full lg:mx-auto lg:max-w-[540px]
-            lg:text-center"
+          class="
+            c-description
+            mt-4
+            w-full
+            lg:mx-auto
+            lg:max-w-[540px]
+            lg:text-center
+          "
         >
           Our aim is to make it quick and easy for you to access your favourite
           websites. Your bookmarks sync between your devices so you can access
@@ -280,8 +440,15 @@
           class="col-start-2 mt-8 w-full md:mt-18 lg:mx-auto lg:max-w-[730px]"
         >
           <ul
-            class="flex flex-col items-stretch justify-center text-center
-              md:flex-row md:justify-start"
+            class="
+              flex
+              flex-col
+              items-stretch
+              justify-center
+              text-center
+              md:flex-row
+              md:justify-start
+            "
           >
             <li class="c-feature-divider md:flex-1">
               <a
@@ -304,8 +471,15 @@
       </section>
       <!-- Bookmark in one click< -->
       <section
-        class="c-feature-panel page-container mt-11 lg:mt-18 lg:flex lg:flex-row
-          lg:justify-center"
+        class="
+          c-feature-panel
+          page-container
+          mt-11
+          lg:mt-18
+          lg:flex
+          lg:flex-row
+          lg:justify-center
+        "
         id="simple-bookmarking"
         aria-labelledby="simple-title"
       >
@@ -332,8 +506,15 @@
       </section>
       <!-- Intelligent search -->
       <section
-        class="c-feature-panel page-container mt-11 lg:mt-18 lg:flex lg:flex-row
-          lg:justify-center"
+        class="
+          c-feature-panel
+          page-container
+          mt-11
+          lg:mt-18
+          lg:flex
+          lg:flex-row
+          lg:justify-center
+        "
         id="speedy-searching"
         aria-labelledby="search-title"
         hidden
@@ -360,8 +541,15 @@
       </section>
       <!-- Share your bookmarks -->
       <section
-        class="c-feature-panel page-container mt-11 lg:mt-18 lg:flex lg:flex-row
-          lg:justify-center"
+        class="
+          c-feature-panel
+          page-container
+          mt-11
+          lg:mt-18
+          lg:flex
+          lg:flex-row
+          lg:justify-center
+        "
         id="easy-sharing"
         aria-labelledby="sharing-title"
         hidden
@@ -396,16 +584,33 @@
           Download the extension
         </h2>
         <p
-          class="c-description mt-4 lg:mx-auto lg:w-full lg:max-w-[541px]
-            lg:text-center"
+          class="
+            c-description
+            mt-4
+            lg:mx-auto
+            lg:w-full
+            lg:max-w-[541px]
+            lg:text-center
+          "
         >
           We’ve got more browsers in the pipeline. Please do let us know if
           you’ve got a favourite you’d like us to prioritize.
         </p>
         <ul
-          class="c-download__list mt-10 gap-10 md:mx-auto md:flex
-            md:max-w-[614px] md:flex-row md:gap-2 lg:mt-12 lg:max-w-[904px]
-            lg:items-start lg:gap-8"
+          class="
+            c-download__list
+            mt-10
+            gap-10
+            md:mx-auto
+            md:flex
+            md:max-w-[614px]
+            md:flex-row
+            md:gap-2
+            lg:mt-12
+            lg:max-w-[904px]
+            lg:items-start
+            lg:gap-8
+          "
         >
           <li class="w-full max-w-[280px] md:max-w-none md:min-w-0 md:flex-1">
             <article class="c-download-card bg-white shadow-soft-blue">
@@ -431,8 +636,14 @@
             </article>
           </li>
           <li
-            class="w-full max-w-[280px] md:max-w-none md:min-w-0 md:flex-1
-              lg:mt-10"
+            class="
+              w-full
+              max-w-[280px]
+              md:max-w-none
+              md:min-w-0
+              md:flex-1
+              lg:mt-10
+            "
           >
             <article class="c-download-card bg-white shadow-soft-blue">
               <div class="c-download-card__body">
@@ -457,8 +668,14 @@
             </article>
           </li>
           <li
-            class="w-full max-w-[280px] md:max-w-none md:min-w-0 md:flex-1
-              lg:mt-20"
+            class="
+              w-full
+              max-w-[280px]
+              md:max-w-none
+              md:min-w-0
+              md:flex-1
+              lg:mt-20
+            "
           >
             <article class="c-download-card bg-white shadow-soft-blue">
               <div class="c-download-card__body">
@@ -486,8 +703,18 @@
       </section>
       <!-- Frequently Asked Questions -->
       <section
-        class="c-faq page-container mt-32 flex flex-col items-center gap-14 px-8
-          md:px-20 lg:mt-40"
+        class="
+          c-faq
+          page-container
+          mt-32
+          flex
+          flex-col
+          items-center
+          gap-14
+          px-8
+          md:px-20
+          lg:mt-40
+        "
         aria-labelledby="faq-title"
       >
         <div class="flex flex-col gap-4 md:max-w-[540px]">
@@ -495,16 +722,26 @@
             Frequently Asked Questions
           </h2>
           <p
-            class="c-description lg:mx-auto lg:w-full lg:max-w-[540px]
-              lg:text-center"
+            class="
+              c-description
+              lg:mx-auto
+              lg:w-full
+              lg:max-w-[540px]
+              lg:text-center
+            "
           >
             Here are some of our FAQs. If you have any other questions you’d
             like answered please feel free to email us.
           </p>
         </div>
         <div
-          class="c-faq__list w-full md:max-w-[540px] md:border-t
-            md:border-[#979797]"
+          class="
+            c-faq__list
+            w-full
+            md:max-w-[540px]
+            md:border-t
+            md:border-[#979797]
+          "
         >
           <details class="c-accordion">
             <summary class="c-accordion__summary">What is Bookmark?</summary>
@@ -551,8 +788,13 @@
         </div>
         <a
           href="#"
-          class="c-feature-panel__link max-w-full text-[0.9375rem]/[2.0]
-            font-medium wrap-break-word"
+          class="
+            c-feature-panel__link
+            max-w-full
+            text-[0.9375rem]/[2.0]
+            font-medium
+            wrap-break-word
+          "
           >More Info<span class="sr-only">
             about frequently asked questions</span
           ></a
@@ -560,15 +802,32 @@
       </section>
       <!-- CTA Section -->
       <section
-        class="c-contact mt-32 flex flex-col gap-8 bg-blue-600 px-8 py-[49px]
-          md:pt-14 md:pb-[78px]"
+        class="
+          c-contact
+          mt-32
+          flex
+          flex-col
+          gap-8
+          bg-blue-600
+          px-8
+          py-[49px]
+          md:pt-14
+          md:pb-[78px]
+        "
         id="contact"
         aria-labelledby="contact-title"
       >
         <div class="md:mx-auto md:w-full md:max-w-[442px]">
           <p
-            class="text-center font-rubik text-[0.75rem]/[3.0] font-medium
-              tracking-[0.3125rem] wrap-anywhere text-white"
+            class="
+              text-center
+              font-rubik
+              text-[0.75rem]/[3.0]
+              font-medium
+              tracking-[0.3125rem]
+              wrap-anywhere
+              text-white
+            "
           >
             35,000+ already joined
           </p>
@@ -577,20 +836,44 @@
           </h2>
         </div>
         <form
-          class="flex flex-col gap-4 md:mx-auto md:w-full md:max-w-[442px]
-            md:flex-row md:flex-wrap md:items-start"
+          class="
+            flex
+            flex-col
+            gap-4
+            md:mx-auto
+            md:w-full
+            md:max-w-[442px]
+            md:flex-row
+            md:flex-wrap
+            md:items-start
+          "
         >
           <label class="sr-only" for="email">Email address</label>
           <div
-            class="c-email-field w-full md:min-w-[min(100%,18.75rem)] md:flex-1
-              md:basis-[18.75rem]"
+            class="
+              c-email-field
+              w-full
+              md:min-w-[min(100%,18.75rem)]
+              md:flex-1
+              md:basis-[18.75rem]
+            "
           >
             <input
               id="email"
               name="email"
-              class="w-full max-w-full rounded-[5px] border-2 border-transparent
-                bg-white px-4 py-[9px] font-rubik text-[0.9375rem]/[2.0]
-                placeholder:font-normal"
+              class="
+                w-full
+                max-w-full
+                rounded-[5px]
+                border-2
+                border-transparent
+                bg-white
+                px-4
+                py-[9px]
+                font-rubik
+                text-[0.9375rem]/[2.0]
+                placeholder:font-normal
+              "
               type="email"
               autocomplete="email"
               placeholder="Enter your email address"
@@ -599,8 +882,15 @@
             />
             <p
               id="email-error"
-              class="px-3 py-1.5 text-[0.625rem]/[1.5] font-medium wrap-anywhere
-                text-white italic"
+              class="
+                px-3
+                py-1.5
+                text-[0.625rem]/[1.5]
+                font-medium
+                wrap-anywhere
+                text-white
+                italic
+              "
               role="alert"
               hidden
             >
@@ -609,11 +899,26 @@
           </div>
           <button
             type="submit"
-            class="w-full max-w-full rounded-[5px] border border-transparent
-              bg-red-400 px-4 py-[9px] font-rubik text-[0.9375rem]/[2.0]
-              font-medium wrap-break-word text-white hover:border-red-400
-              hover:bg-transparent hover:text-red-400 md:w-auto
-              md:min-w-[min(100%,8.4em)]"
+            class="
+              w-full
+              max-w-full
+              rounded-[5px]
+              border
+              border-transparent
+              bg-red-400
+              px-4
+              py-[9px]
+              font-rubik
+              text-[0.9375rem]/[2.0]
+              font-medium
+              wrap-break-word
+              text-white
+              hover:border-red-400
+              hover:bg-transparent
+              hover:text-red-400
+              md:w-auto
+              md:min-w-[min(100%,8.4em)]
+            "
           >
             Contact Us
           </button>
@@ -622,10 +927,21 @@
     </main>
     <footer class="c-site-footer bg-blue-950 py-[33px]">
       <div
-        class="page-container flex flex-col items-center gap-12 px-8 md:flex-row
-          md:flex-wrap md:justify-center md:px-20 lg:justify-start"
+        class="
+          page-container
+          flex
+          flex-col
+          items-center
+          gap-12
+          px-8
+          md:flex-row
+          md:flex-wrap
+          md:justify-center
+          md:px-20
+          lg:justify-start
+        "
       >
-        <a href="/" aria-label="Bookmark home" class="shrink-0"
+        <a href="%BASE_URL%" aria-label="Bookmark home" class="shrink-0"
           ><svg
             width="148"
             height="25"
@@ -650,29 +966,52 @@
         </a>
         <nav aria-label="Footer" class="max-w-full min-w-0">
           <ul
-            class="flex flex-col items-center gap-6 wrap-anywhere md:flex-row
-              md:flex-wrap md:justify-center"
+            class="
+              flex
+              flex-col
+              items-center
+              gap-6
+              wrap-anywhere
+              md:flex-row
+              md:flex-wrap
+              md:justify-center
+            "
           >
             <li class="text-center">
               <a
-                class="font-rubik text-[0.9375rem]/[1.65] text-white uppercase
-                  hover:text-red-400"
+                class="
+                  font-rubik
+                  text-[0.9375rem]/[1.65]
+                  text-white
+                  uppercase
+                  hover:text-red-400
+                "
                 href="#features"
                 >Features</a
               >
             </li>
             <li class="text-center">
               <a
-                class="font-rubik text-[0.9375rem]/[1.65] text-white uppercase
-                  hover:text-red-400"
+                class="
+                  font-rubik
+                  text-[0.9375rem]/[1.65]
+                  text-white
+                  uppercase
+                  hover:text-red-400
+                "
                 href="#download"
                 >Pricing</a
               >
             </li>
             <li class="text-center">
               <a
-                class="font-rubik text-[0.9375rem]/[1.65] text-white uppercase
-                  hover:text-red-400"
+                class="
+                  font-rubik
+                  text-[0.9375rem]/[1.65]
+                  text-white
+                  uppercase
+                  hover:text-red-400
+                "
                 href="#contact"
                 >Contact</a
               >
@@ -680,8 +1019,15 @@
           </ul>
         </nav>
         <ul
-          class="c-site-footer__social flex items-center justify-center gap-10
-            md:gap-6 lg:ml-auto"
+          class="
+            c-site-footer__social
+            flex
+            items-center
+            justify-center
+            gap-10
+            md:gap-6
+            lg:ml-auto
+          "
         >
           <li>
             <a
@@ -691,9 +1037,16 @@
             >
               <span
                 aria-hidden="true"
-                class="block h-6 w-6 bg-current
-                  mask-[url(/images/icon-facebook.svg)] mask-contain mask-center
-                  mask-no-repeat"
+                class="
+                  block
+                  h-6
+                  w-6
+                  bg-current
+                  mask-[url(/images/icon-facebook.svg)]
+                  mask-contain
+                  mask-center
+                  mask-no-repeat
+                "
               ></span>
             </a>
           </li>
@@ -705,17 +1058,31 @@
             >
               <span
                 aria-hidden="true"
-                class="block h-5 w-6 bg-current
-                  mask-[url(/images/icon-twitter.svg)] mask-contain mask-center
-                  mask-no-repeat"
+                class="
+                  block
+                  h-5
+                  w-6
+                  bg-current
+                  mask-[url(/images/icon-twitter.svg)]
+                  mask-contain
+                  mask-center
+                  mask-no-repeat
+                "
               ></span>
             </a>
           </li>
         </ul>
       </div>
       <p
-        class="attribution page-container mt-8 px-8 text-center text-white
-          md:px-20"
+        class="
+          attribution
+          page-container
+          mt-8
+          px-8
+          text-center
+          text-white
+          md:px-20
+        "
       >
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a

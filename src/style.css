@@ -31,7 +31,7 @@ body {
   }
 
   .c-feature-panel__visual {
-    @apply relative aspect-[536/416] self-start w-full;
+    @apply relative aspect-[536/416] self-start w-full md:max-w-[536px];
     margin-bottom: calc(100% * 416 / 536 * 0.16);
   }
 
@@ -40,6 +40,10 @@ body {
     @apply absolute top-[17%] right-16.25 left-0 h-[99%] rounded-r-[316.5px]
       bg-blue-600;
     margin-left: calc((100% - 100vw) / 2);
+
+    @media (width >= 768px) {
+      margin-left: calc(100% - 100vw);
+    }
   }
 
   .c-feature-panel__image {
@@ -133,7 +137,7 @@ body {
 
   .c-download__link {
     @apply rounded-[5px] bg-blue-600 px-8 py-2 font-rubik text-[15px]/[2.0]
-      font-medium text-white md:px-[8px] md:py-[3px] text-center;
+      font-medium text-white md:px-[8px] md:py-[3px] text-center lg:py-2;
   }
 
   .c-download-card {

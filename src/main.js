@@ -1,5 +1,32 @@
 import "./style.css";
 
+const emailInput = document.querySelector("#email");
+const emailForm = emailInput.form;
+const emailError = document.querySelector("#email-error");
+
+emailForm.noValidate = true;
+
+function updateEmailError() {
+  const isValid = emailInput.validity.valid;
+  emailError.hidden = isValid;
+  emailInput.setAttribute("aria-invalid", String(!isValid));
+  return isValid;
+}
+
+emailForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!updateEmailError()) {
+    emailInput.focus();
+  }
+});
+
+emailInput.addEventListener("input", () => {
+  if (emailInput.getAttribute("aria-invalid") === "true") {
+    updateEmailError();
+  }
+});
+
 const menuButton = document.querySelector('[aria-controls="mobile-menu"]');
 const mobileMenu = document.querySelector("#mobile-menu");
 const closeButton = mobileMenu.querySelector("button");

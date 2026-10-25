@@ -16,7 +16,7 @@ export default [
         "error",
         {
           printWidth: 80,
-          classesPerLine: 1, // 무조건 한 줄에 1개씩 배치
+          classesPerLine: 1, // Place one class per line.
           indent: 2,
           group: "newLine",
           preferSingleLine: true,

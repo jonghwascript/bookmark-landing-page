@@ -373,3 +373,34 @@
 | **AAA: Specialized Support** | 특정 사용자층을 대상으로 하는 영역에 주로 적용 |
 
 준수 수준이 높다고 해서 반드시 구현 난이도가 높은 것은 아닙니다.
+
+## 모바일 메뉴 검증 — 2026-10-26
+
+Chrome headless와 임시 Playwright 실행으로 다음 항목을 확인했다. 프로젝트 의존성 파일은 변경하지 않았다.
+
+- [x] 메뉴 열기 시 닫기 버튼 포커스 및 aria-expanded=true.
+- [x] Tab과 Shift+Tab 양방향 순환, 외부 포커스 이동 방어.
+- [x] 배경 inert 적용 및 원래 inert 상태 복원.
+- [x] Chrome 접근성 트리의 Mobile navigation 대화상자, 열린 동안 main 제외 및 닫은 뒤 복원.
+- [x] 닫기 버튼, Escape, 링크 선택 종료 시 트리거 복귀 및 앵커 이동 유지.
+- [x] 모바일→데스크톱→모바일 전환, 표시된 헤더 링크 포커스 및 재열기.
+- [x] 포커스 가능 요소 없음, 숨김 및 disabled 컨트롤 제외.
+- [x] 반복 열기·닫기 후 기능 패널, FAQ, 이메일 오류 처리 정상 동작.
+- [ ] 실제 화면 읽기 프로그램의 음성 출력 및 탐색 검증. 접근성 트리 확인만으로 이 항목을 완료하지 않았다.
+
+빌드, format:check(Prettier 및 ESLint), OpenSpec 엄격 검증은 통과했다. HTML은 .prettierignore에서 제외하여 ESLint readable-tailwind가 클래스 줄바꿈을 관리하고 CSS에는 Prettier를 적용했다.
+
+화면 읽기 수동 검증: 모바일 화면 폭에서 메뉴를 열어 Mobile navigation 대화상자와 Close menu 버튼 안내를 확인한다. 탐색 키와 Tab/Shift+Tab으로 배경 콘텐츠에 접근할 수 없는지 확인한 뒤, Escape로 닫았을 때 Open menu 버튼 안내와 배경 탐색 복원을 확인한다. 현재 연결된 도구로는 실제 화면 읽기 프로그램의 UI와 음성 출력에 접근할 수 없어 이 검증을 미완료로 남긴다.
+
+## 히어로 장식 SVG 검증 — 2026-10-26
+
+Chrome headless와 임시 Playwright 실행으로 375×1000 및 1440×1000 화면에서 검증했다.
+
+- [x] 히어로 SVG 루트에만 aria-hidden=true와 focusable=false 적용.
+- [x] Chrome 접근성 트리에서 SVG가 ariaHiddenElement 사유로 제외됨.
+- [x] 히어로 제목, 설명, 두 다운로드 링크의 이름 및 #download 목적지 유지.
+- [x] Tab과 Shift+Tab으로 헤더에서 다운로드 링크까지 양방향 탐색 가능하며 SVG는 포커스 순서에서 제외됨.
+- [x] 두 속성을 제거한 변경 전 상태와 비교하여 SVG 경계 크기·위치 및 히어로 스크린샷 픽셀이 동일함.
+- [x] npm run build, npm run format:check 및 OpenSpec 엄격 검증 통과.
+
+실제 화면 읽기 프로그램의 음성·탐색 검증은 실행하지 않았다. 위 결과는 Chrome 접근성 트리와 브라우저 키보드 검증 결과다.

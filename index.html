@@ -129,6 +129,10 @@
     </header>
     <aside
       id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+      tabindex="-1"
       class="
         fixed
         inset-y-0
@@ -310,7 +314,7 @@
           "
         >
           <!-- prettier-ignore -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="
+          <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" class="
             relative
             h-auto
             w-full

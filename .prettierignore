@@ -3,3 +3,6 @@ node_modules
 package-lock.json
 *.md
 *.svg
+
+# ESLint readable-tailwind maintains HTML class wrapping.
+*.html

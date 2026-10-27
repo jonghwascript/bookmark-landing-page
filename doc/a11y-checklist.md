@@ -433,3 +433,17 @@ Chrome headless와 임시 Playwright 실행으로 375×1000 및 1440×1000 화�
 - [ ] 실제 화면 읽기 프로그램의 음성 확인. 음성 출력에 접근할 수 없어 실행하지 않았고, 위 접근성 트리 결과로 대신했다.
 
 참고: 오류 상태의 빨간 테두리(`border-red-400`)는 `@layer components` 규칙이 입력란의 `border-transparent` 유틸리티에 밀려 적용되지 않는다. 이번 변경 전부터 같은 상태이며 범위 밖으로 남겨 둔다.
+
+## Features 탭 전환기 검증 — 2026-10-27
+
+Features 전환기를 `nav`/링크에서 탭 목록·탭·탭 패널로 바꾼 뒤, 임시 Playwright Chromium headless(375·768·1440 폭)에서 Chrome 접근성 트리와 키보드 동작을 확인했다.
+
+- [x] 내비게이션 랜드마크는 Main, Footer만 남고 "Features" 랜드마크가 사라짐.
+- [x] "Features" 탭 목록, 탭 3개(Simple Bookmarking 선택됨), 표시 중인 패널이 선택된 탭 이름의 탭 패널로 노출됨.
+- [x] 클릭, Enter, Space로 선택 시 aria-selected·tabindex·패널 표시가 함께 바뀌고 주소 해시는 그대로임.
+- [x] 오른쪽·아래쪽, 왼쪽·위쪽 화살표(양 끝 순환), Home, End가 포커스와 선택, 패널을 함께 바꾸며 페이지를 스크롤하지 않음.
+- [x] 선택된 탭에서 Tab은 패널의 More Info 링크로, Shift+Tab은 선택된 탭으로 돌아옴.
+- [x] 세 화면 폭에서 탭 위치·크기·글꼴·색·정렬·커서·선택 밑줄·구분선이 변경 전 측정값과 동일함.
+- [x] 탭 hover 색(red-400), 키보드 포커스 표시, 패널 페이드 애니메이션 유지. 헤더·푸터·모바일 메뉴의 #features 링크 이동 정상.
+- [x] npm run build, npm run format:check(Prettier 및 ESLint) 통과.
+- [ ] 실제 화면 읽기 프로그램의 탭 안내(이름, 선택됨, 3개 중 N번째) 확인. 음성 출력에 접근할 수 없어 실행하지 않았고, 위 접근성 트리 결과로 대신했다.

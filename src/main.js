@@ -63,23 +63,51 @@ desktopViewport.addEventListener("change", (event) => {
   if (event.matches) mobileMenu.close();
 });
 
-const featureLinks = document.querySelectorAll('nav[aria-label="Features"] a');
+const featureTabList = document.querySelector('[role="tablist"]');
+const featureTabs = [...featureTabList.querySelectorAll('[role="tab"]')];
 
-featureLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
+function selectTab(selectedTab, { focus = false } = {}) {
+  featureTabs.forEach((tab) => {
+    const isSelected = tab === selectedTab;
+    const panel = document.getElementById(tab.getAttribute("aria-controls"));
 
-    featureLinks.forEach((featureLink) => {
-      const isSelected = featureLink === link;
-      const panel = document.getElementById(featureLink.hash.slice(1));
-
-      panel.hidden = !isSelected;
-
-      if (isSelected) {
-        featureLink.setAttribute("aria-current", "location");
-      } else {
-        featureLink.removeAttribute("aria-current");
-      }
-    });
+    tab.setAttribute("aria-selected", String(isSelected));
+    tab.tabIndex = isSelected ? 0 : -1;
+    panel.hidden = !isSelected;
   });
+
+  if (focus) selectedTab.focus();
+}
+
+featureTabs.forEach((tab) => {
+  tab.addEventListener("click", () => selectTab(tab));
+});
+
+// Tabs stack vertically on mobile, so both arrow axes move between them.
+const tabKeyOffsets = {
+  ArrowRight: 1,
+  ArrowDown: 1,
+  ArrowLeft: -1,
+  ArrowUp: -1,
+};
+
+featureTabList.addEventListener("keydown", (event) => {
+  const index = featureTabs.indexOf(event.target);
+  if (index === -1) return;
+
+  let nextIndex;
+  if (event.key === "Home") {
+    nextIndex = 0;
+  } else if (event.key === "End") {
+    nextIndex = featureTabs.length - 1;
+  } else if (event.key in tabKeyOffsets) {
+    nextIndex =
+      (index + tabKeyOffsets[event.key] + featureTabs.length) %
+      featureTabs.length;
+  } else {
+    return;
+  }
+
+  event.preventDefault();
+  selectTab(featureTabs[nextIndex], { focus: true });
 });

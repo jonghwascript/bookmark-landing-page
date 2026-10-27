@@ -437,11 +437,12 @@
           websites. Your bookmarks sync between your devices so you can access
           them on the go.
         </p>
-        <nav
-          aria-label="Features"
+        <div
           class="col-start-2 mt-8 w-full md:mt-18 lg:mx-auto lg:max-w-[730px]"
         >
           <ul
+            role="tablist"
+            aria-label="Features"
             class="
               flex
               flex-col
@@ -452,24 +453,47 @@
               md:justify-start
             "
           >
-            <li class="c-feature-divider md:flex-1">
-              <a
-                href="#simple-bookmarking"
-                class="c-feature-link"
-                aria-current="location"
-                >Simple Bookmarking</a
+            <li class="c-feature-divider md:flex-1" role="none">
+              <button
+                type="button"
+                role="tab"
+                id="tab-simple-bookmarking"
+                class="c-feature-link cursor-pointer"
+                aria-controls="simple-bookmarking"
+                aria-selected="true"
+                tabindex="0"
               >
+                Simple Bookmarking
+              </button>
             </li>
-            <li class="c-feature-divider md:flex-1">
-              <a href="#speedy-searching" class="c-feature-link"
-                >Speedy Searching</a
+            <li class="c-feature-divider md:flex-1" role="none">
+              <button
+                type="button"
+                role="tab"
+                id="tab-speedy-searching"
+                class="c-feature-link cursor-pointer"
+                aria-controls="speedy-searching"
+                aria-selected="false"
+                tabindex="-1"
               >
+                Speedy Searching
+              </button>
             </li>
-            <li class="c-feature-divider md:flex-1">
-              <a href="#easy-sharing" class="c-feature-link">Easy Sharing</a>
+            <li class="c-feature-divider md:flex-1" role="none">
+              <button
+                type="button"
+                role="tab"
+                id="tab-easy-sharing"
+                class="c-feature-link cursor-pointer"
+                aria-controls="easy-sharing"
+                aria-selected="false"
+                tabindex="-1"
+              >
+                Easy Sharing
+              </button>
             </li>
           </ul>
-        </nav>
+        </div>
       </section>
       <!-- Bookmark in one click< -->
       <section
@@ -483,7 +507,8 @@
           lg:justify-center
         "
         id="simple-bookmarking"
-        aria-labelledby="simple-title"
+        role="tabpanel"
+        aria-labelledby="tab-simple-bookmarking"
       >
         <div class="c-feature-panel__visual md:ml-auto lg:mb-0 lg:flex-1">
           <img
@@ -518,7 +543,8 @@
           lg:justify-center
         "
         id="speedy-searching"
-        aria-labelledby="search-title"
+        role="tabpanel"
+        aria-labelledby="tab-speedy-searching"
         hidden
       >
         <div class="c-feature-panel__visual lg:mb-0 lg:flex-1">
@@ -553,7 +579,8 @@
           lg:justify-center
         "
         id="easy-sharing"
-        aria-labelledby="sharing-title"
+        role="tabpanel"
+        aria-labelledby="tab-easy-sharing"
         hidden
       >
         <div class="c-feature-panel__visual lg:mb-0 lg:flex-1">

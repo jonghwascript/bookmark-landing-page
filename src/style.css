@@ -120,7 +120,7 @@ body {
       w-[min(100%,calc(163/375*100vw))] -translate-x-1/2 bg-red-400 opacity-0;
   }
 
-  .c-feature-link[aria-current="location"]::after {
+  .c-feature-link[aria-selected="true"]::after {
     @apply opacity-100;
   }
 

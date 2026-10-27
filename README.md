@@ -26,8 +26,8 @@ This is a solution to the [Bookmark landing page challenge on Frontend Mentor](h
 Users can:
 
 - View responsive layouts for mobile, tablet, and desktop screens.
-- Open and close the mobile navigation menu, including with the Escape key.
-- Switch between feature panels and see the selected feature underlined.
+- Open and close the mobile navigation menu, including with the Escape key. While it is open, keyboard focus stays inside it and the page behind it can be neither reached nor scrolled.
+- Switch between feature panels and see the selected feature underlined, with the mouse or with the arrow, Home, and End keys.
 - Expand FAQ answers.
 - See hover states on links, buttons, and footer social icons.
 - Receive inline feedback when submitting an empty or incorrectly formatted email address.
@@ -59,7 +59,11 @@ The contact form validates email syntax locally. It does not send emails or crea
 
 Design measurements can be translated into layout relationships. At a viewport width of 375px, 32px side padding leaves 311px for content. Cards can fill the available space while keeping a maximum width of 280px.
 
-Feature selection uses `aria-current` to keep the visible panel and underline in sync. Email validation uses the input's native validity state with a custom error message, `aria-invalid`, and an alert for assistive technology.
+The feature switcher follows the WAI-ARIA tabs pattern rather than a `nav` of links. Each tab is a button whose `aria-selected` state drives both the visible panel and the underline, and only the selected tab is in the Tab order (a roving `tabindex`). The arrow, Home, and End keys move between tabs and select them as focus moves, since switching panels is instant. The mobile menu is a native `<dialog>` opened with `showModal()`, which keeps focus inside it, makes the rest of the page inert, closes on Escape, and returns focus to the trigger. A dialog does not stop the page behind it from scrolling, so `:root:has(dialog:modal)` hides the root overflow while it is open.
+
+Email validation uses the input's native validity state with a custom error message, `aria-invalid`, and an alert for assistive technology. The input points to the message with `aria-describedby` only while the error is visible: a hidden element still supplies its text when referenced by ID, so a permanent reference made screen readers announce the error on an empty field before anything went wrong.
+
+Tailwind v4 places utilities in a later cascade layer than components, so a utility on an element beats a component rule regardless of selector specificity. The input's `border-transparent` and `px-4` utilities silently overrode the error state's red border and icon padding; moving those base values into the same component rule as the error state fixed it.
 
 Units also depend on context: moving a `20em` width from a 15px input to a 16px wrapper changes it from 300px to 320px. Using `18.75rem` for the wrapper preserves the intended 300px width at the default root font size and keeps the tablet form within its 442px container.
 
@@ -123,7 +127,7 @@ left: 50%;
 translate: -50% 0;
 ```
 
-The underline is 163px wide at a 375px viewport, preserving a viewport ratio of approximately 43.47%. `min()` caps it at the link's width. `left: 50%` positions its left edge halfway across the containing link, while the negative translation moves it back by half of its **own** width to center it.
+The underline is 163px wide at a 375px viewport, preserving a viewport ratio of approximately 43.47%. `min()` caps it at the tab button's width, and it is shown only on the tab with `aria-selected="true"`. `left: 50%` positions its left edge halfway across the containing tab, while the negative translation moves it back by half of its **own** width to center it.
 
 The FAQ arrow uses the same centering principle vertically. Its usual `top: 50%` refers to the summary's height, while `-translate-y-1/2` moves it up by half of the arrow's own height. For the first mobile question, `top: calc(50% - 0.5rem)` compensates for the removed top padding; `0.5rem` is 8px at the default 16px root font size.
 
@@ -140,7 +144,7 @@ The FAQ arrow uses the same centering principle vertically. Its usual `top: 50%`
 
 ### AI collaboration
 
-Codex assisted with layout analysis, hover states, email validation and error styling, debugging the tablet form width, and deployment configuration. Changes were reviewed against the project code and checked with production builds.
+Codex assisted with layout analysis, hover states, email validation and error styling, debugging the tablet form width, and deployment configuration. Claude Code assisted with later accessibility fixes (the mobile menu dialog, the feature tabs, and the email error's description and red border), keeping the hero download buttons on one row at 375px, and locking page scroll behind the mobile menu. Changes were reviewed against the project code and checked with production builds.
 
 ## Local development
 

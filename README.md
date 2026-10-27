@@ -65,7 +65,7 @@ Email validation uses the input's native validity state with a custom error mess
 
 Tailwind v4 places utilities in a later cascade layer than components, so a utility on an element beats a component rule regardless of selector specificity. The input's `border-transparent` and `px-4` utilities silently overrode the error state's red border and icon padding; moving those base values into the same component rule as the error state fixed it.
 
-Units also depend on context: moving a `20em` width from a 15px input to a 16px wrapper changes it from 300px to 320px. Using `18.75rem` for the wrapper preserves the intended 300px width at the default root font size and keeps the tablet form within its 442px container.
+Units also depend on context: moving a `20em` width from a 15px input to a 16px wrapper changes it from 300px to 320px. Using `18.75rem` for the wrapper preserves the intended 300px width at the default root font size and keeps the tablet form within its 442px container. That fit depends on the default font size: with the browser's default raised to 20px, the wrapper's basis becomes 375px and, at 768px, the button no longer fits beside it, so the form wraps onto two rows. Wrapping keeps the form usable, but it no longer matches the one-row design.
 
 ### Layout calculations and percentages
 
@@ -82,6 +82,10 @@ The page container fills its containing block up to 1275px and is centered with 
 
 With a 1440px containing block, the padding is `(1440 - 1275) / 2 + 80 = 162.5px`. Below 1275px, `max(0px, ...)` prevents a negative outer offset, leaving 80px of padding. This rule applies only at the `lg` breakpoint.
 
+**Why:** the hero illustration and its blue background shape bleed to the right edge of the viewport, so the hero cannot sit inside `.page-container`. The padding recreates the container's left edge so the hero text still lines up with the logo above it.
+
+**Breaks when:** `1275px` is written in two places, `page-container` and this padding, so changing one without the other misaligns the hero. The `80px` inset is also a fixed pixel value while the header's padding is in rem: with the browser's default font size raised to 20px, the logo starts at 175px and the hero heading at 155px on a 1440px screen, 20px apart.
+
 #### Mobile menu padding
 
 ```css
@@ -89,6 +93,18 @@ padding-inline: calc((100vw - 82vw) / 2);
 ```
 
 The menu reserves 82% of the viewport width for content and splits the remaining 18% between its sides. Each side receives `9vw`, or 33.75px at a 375px viewport. This is viewport-relative spacing rather than a fixed 32px gutter.
+
+**Why:** the full-screen menu keeps the same proportions as the mobile design at any phone or tablet width, instead of a fixed gutter that looks cramped on small phones and loose on tablets.
+
+**Breaks when:** the gutter shrinks with the screen, to 28.8px at 320px, narrower than the 32px gutter used elsewhere on the page. `vw` normally includes a desktop scrollbar's width, but the menu locks page scroll while it is open, so no scrollbar is shown and `100vw` equals the visible width.
+
+#### Hero download buttons
+
+At a 375px viewport the button row has 313px. With 12px side padding on mobile, the buttons measure 147.4px and 141.4px, so `147.4 + 16 + 141.4 = 304.8px` fits on one row. From the `md` breakpoint up, the buttons use their original 14.5px and 15px padding.
+
+**Why:** the mobile design shows both buttons side by side. With the original padding they needed 315.8px, 2.8px more than the row, so the second button wrapped.
+
+**Breaks when:** the row is narrower than about 368px, so the buttons wrap on 320px phones. They wrap without horizontal overflow, which is the intended fallback. The margin at 375px is only about 8px, so a wider fallback font shown before Rubik loads could also wrap them briefly.
 
 #### Feature image proportions and spacing
 
@@ -100,6 +116,10 @@ margin-bottom: calc(100% * 416 / 536 * 0.16);
 The visual's aspect ratio means its height is its width multiplied by `416 / 536`. The margin formula reserves 16% of that calculated height when the visual fills the containing block's width. For a 311px containing block, this is `311 * 416 / 536 * 0.16`, approximately 38.62px.
 
 Vertical percentage margins also use the containing block's **width**. Once the visual is capped at 536px on larger screens, the margin is still calculated from its containing block, so it is not necessarily 16% of the visual's actual height. The desktop markup resets this margin with `lg:mb-0`.
+
+**Why:** the decorative background behind the image reaches 116% of the image's height (see the table below). The extra 16% of margin reserves that overhang so the text after the image does not run into the background.
+
+**Breaks when:** the image no longer fills its containing block. Between 768px and 1023px the image is capped at 536px but the margin is still measured from the wider containing block: at 768px it is 85.5px instead of 66.6px (16% of the 416px image height), leaving about 19px of extra space. Changing the background's `top-[17%]` or `h-[99%]` also requires changing the `0.16` factor.
 
 #### Decorative backgrounds
 
@@ -119,6 +139,10 @@ margin-left: calc(100% - 100vw);
 
 These negative margins extend the feature background toward the viewport's left edge. Here, `100%` uses the visual containing block's width. With a 311px visual and a 375px viewport, the first formula gives `(311 - 375) / 2 = -32px`, canceling a centered 32px gutter. The second formula uses the entire width difference; reaching the viewport edge then depends on the visual's actual horizontal position.
 
+**Why:** in the design the blue shape behind the feature image touches the left edge of the screen, while the image itself stays inside the page gutter.
+
+**Breaks when:** `100vw` includes a classic desktop scrollbar (about 15px), so the background starts about 7.5px beyond the left edge of the screen at 375px. This is harmless because content that overflows to the left never adds a horizontal scrollbar; the page measured no horizontal overflow at 375, 768, 1024, 1440, or 1600px. The same technique on the right side would overflow and create a horizontal scrollbar.
+
 #### Feature underline sizing and centering
 
 ```css
@@ -130,6 +154,10 @@ translate: -50% 0;
 The underline is 163px wide at a 375px viewport, preserving a viewport ratio of approximately 43.47%. `min()` caps it at the tab button's width, and it is shown only on the tab with `aria-selected="true"`. `left: 50%` positions its left edge halfway across the containing tab, while the negative translation moves it back by half of its **own** width to center it.
 
 The FAQ arrow uses the same centering principle vertically. Its usual `top: 50%` refers to the summary's height, while `-translate-y-1/2` moves it up by half of the arrow's own height. For the first mobile question, `top: calc(50% - 0.5rem)` compensates for the removed top padding; `0.5rem` is 8px at the default 16px root font size.
+
+**Why:** the underline keeps the mobile design's 163px proportion on any screen, and `min()` stops it from growing wider than its tab on narrow tablet columns. The FAQ correction keeps the arrow centered on the question's text rather than on the summary box, whose top padding is removed only on the first item.
+
+**Breaks when:** the FAQ correction is half of the summary's `py-4` (1rem) top padding. Changing that padding without changing `0.5rem` puts the first arrow off-center.
 
 ### Continued development
 

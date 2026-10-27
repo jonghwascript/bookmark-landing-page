@@ -24,6 +24,11 @@ body {
   @apply font-sans;
 }
 
+/* A modal dialog blocks focus and clicks behind it, but not scrolling. */
+:root:has(dialog:modal) {
+  overflow: hidden;
+}
+
 @layer components {
   /* Kept here, not as utilities, so the error state below can override them. */
   .c-email-field input {

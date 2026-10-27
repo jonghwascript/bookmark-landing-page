@@ -25,6 +25,11 @@ body {
 }
 
 @layer components {
+  /* Kept here, not as utilities, so the error state below can override them. */
+  .c-email-field input {
+    @apply border-transparent px-4;
+  }
+
   .c-email-field:has([aria-invalid="true"]) {
     @apply rounded-[5px] bg-red-400;
   }

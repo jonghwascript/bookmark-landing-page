@@ -432,7 +432,7 @@ Chrome headless와 임시 Playwright 실행으로 375×1000 및 1440×1000 화�
 - [x] npm run build, npm run format:check(Prettier 및 ESLint) 통과.
 - [ ] 실제 화면 읽기 프로그램의 음성 확인. 음성 출력에 접근할 수 없어 실행하지 않았고, 위 접근성 트리 결과로 대신했다.
 
-참고: 오류 상태의 빨간 테두리(`border-red-400`)는 `@layer components` 규칙이 입력란의 `border-transparent` 유틸리티에 밀려 적용되지 않는다. 이번 변경 전부터 같은 상태이며 범위 밖으로 남겨 둔다.
+참고: 오류 상태의 빨간 테두리(`border-red-400`)는 `@layer components` 규칙이 입력란의 `border-transparent` 유틸리티에 밀려 적용되지 않았다. 2026-10-27 email-error-border 변경에서 해결했다. 충돌하던 `border-transparent`·`px-4`를 컴포넌트 규칙으로 옮겨, 오류 상태에서 2px red-400 테두리와 오른쪽 48px 여백(아이콘과 글자 겹침 방지)이 적용된다. 포커스 중에는 브라우저 기본 포커스 링이 테두리 위에 그려진다.
 
 ## Features 탭 전환기 검증 — 2026-10-27
 

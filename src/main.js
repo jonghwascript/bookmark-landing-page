@@ -10,6 +10,12 @@ function updateEmailError() {
   const isValid = emailInput.validity.valid;
   emailError.hidden = isValid;
   emailInput.setAttribute("aria-invalid", String(!isValid));
+  // A hidden element still supplies its text when referenced by ID.
+  if (isValid) {
+    emailInput.removeAttribute("aria-describedby");
+  } else {
+    emailInput.setAttribute("aria-describedby", emailError.id);
+  }
   return isValid;
 }
 

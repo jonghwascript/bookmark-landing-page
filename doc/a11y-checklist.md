@@ -420,3 +420,16 @@ Chrome headless와 임시 Playwright 실행으로 375×1000 및 1440×1000 화�
 - [x] npm run build, npm run format:check(Prettier 및 ESLint) 통과.
 - [ ] Firefox·Safari의 Tab/Shift+Tab 경계 동작. 이 환경에서는 Chromium만 자동 실행할 수 있어 미확인.
 - [ ] 실제 화면 읽기 프로그램의 가상 커서 검증. 음성 출력에 접근할 수 없어 실행하지 않았고, 위 접근성 트리 결과로 배경 제외만 확인했다.
+
+## 이메일 오류 설명 연결 검증 — 2026-10-27
+
+입력란의 고정 `aria-describedby`를 제거하고 오류 표시와 함께 추가·제거하도록 바꾼 뒤, 임시 Playwright Chromium headless(1440×900)에서 Chrome 접근성 트리의 description 값을 확인했다.
+
+- [x] 페이지 로드 후 빈 필드 포커스 시 이름은 Email address, description 없음, aria-invalid 없음.
+- [x] 빈 값·잘못된 형식 제출 시 오류 표시, aria-invalid=true, description이 "Whoops, make sure it’s an email", 입력란 포커스.
+- [x] 오류 상태에서 유효한 값으로 고치면 오류 숨김, aria-invalid=false, aria-describedby 제거. 다시 포커스해도 description 없음.
+- [x] 유효한 값 제출 시 오류 없음, description 없음.
+- [x] npm run build, npm run format:check(Prettier 및 ESLint) 통과.
+- [ ] 실제 화면 읽기 프로그램의 음성 확인. 음성 출력에 접근할 수 없어 실행하지 않았고, 위 접근성 트리 결과로 대신했다.
+
+참고: 오류 상태의 빨간 테두리(`border-red-400`)는 `@layer components` 규칙이 입력란의 `border-transparent` 유틸리티에 밀려 적용되지 않는다. 이번 변경 전부터 같은 상태이며 범위 밖으로 남겨 둔다.

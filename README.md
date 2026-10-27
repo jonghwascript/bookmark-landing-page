@@ -75,16 +75,16 @@ Units also depend on context: moving a `20em` width from a 15px input to a 16px 
 
 ```css
 width: min(100%, 1275px);
-padding-left: calc(max(0px, (100% - 1275px) / 2) + 80px);
+padding-left: calc(max(0px, (100% - 1275px) / 2) + 5rem);
 ```
 
-The page container fills its containing block up to 1275px and is centered with automatic inline margins. The desktop hero padding reproduces that container's left edge plus an 80px inset. Here, the padding percentage refers to the containing block's width.
+The page container fills its containing block up to 1275px and is centered with automatic inline margins. The desktop hero padding reproduces that container's left edge plus a `5rem` inset, the same as the header's `md:px-20`. Here, the padding percentage refers to the containing block's width.
 
-With a 1440px containing block, the padding is `(1440 - 1275) / 2 + 80 = 162.5px`. Below 1275px, `max(0px, ...)` prevents a negative outer offset, leaving 80px of padding. This rule applies only at the `lg` breakpoint.
+With a 1440px containing block and the default 16px root font size, the padding is `(1440 - 1275) / 2 + 80 = 162.5px`. Below 1275px, `max(0px, ...)` prevents a negative outer offset, leaving `5rem` (80px) of padding. This rule applies only at the `lg` breakpoint.
 
 **Why:** the hero illustration and its blue background shape bleed to the right edge of the viewport, so the hero cannot sit inside `.page-container`. The padding recreates the container's left edge so the hero text still lines up with the logo above it.
 
-**Breaks when:** `1275px` is written in two places, `page-container` and this padding, so changing one without the other misaligns the hero. The `80px` inset is also a fixed pixel value while the header's padding is in rem: with the browser's default font size raised to 20px, the logo starts at 175px and the hero heading at 155px on a 1440px screen, 20px apart.
+**Breaks when:** `1275px` is written in two places, `page-container` and this padding, so changing one without the other misaligns the hero. The inset must also use the same unit as the header's padding. It was once a fixed `80px`, so with the browser's default font size raised to 20px the logo started at 175px and the hero heading at 155px on a 1440px screen, 20px apart. Using `5rem` keeps both in step at any font size.
 
 #### Mobile menu padding
 

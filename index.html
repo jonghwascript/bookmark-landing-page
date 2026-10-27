@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A simple bookmark manager that syncs your favourite sites across devices." />
     <link
       rel="icon"
       type="image/png"
@@ -127,20 +128,17 @@
         </nav>
       </div>
     </header>
-    <aside
+    <dialog
       id="mobile-menu"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Mobile navigation"
-      tabindex="-1"
+      aria-label="Menu"
       class="
         fixed
         inset-y-0
         right-0
-        z-50
-        flex
         h-[100dvh]
+        max-h-none
         w-screen
+        max-w-none
         flex-col
         overflow-y-auto
         bg-blue-950/98
@@ -148,10 +146,10 @@
         pt-10
         pb-12
         shadow-lg
+        open:flex
         lg:hidden
         [&>*]:shrink-0
       "
-      hidden
     >
       <div class="flex justify-between">
         <a href="%BASE_URL%" aria-label="Bookmark home">
@@ -177,7 +175,7 @@
             </g>
           </svg>
         </a>
-        <button type="button" aria-label="Close menu">
+        <button type="button" aria-label="Close menu" autofocus>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15">
             <path
               fill="#FFF"
@@ -280,7 +278,7 @@
           /></a>
         </li>
       </ul>
-    </aside>
+    </dialog>
     <main id="main" class="mt-23 lg:mt-36">
       <section
         class="

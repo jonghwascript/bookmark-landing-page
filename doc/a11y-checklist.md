@@ -404,3 +404,19 @@ Chrome headless와 임시 Playwright 실행으로 375×1000 및 1440×1000 화�
 - [x] npm run build, npm run format:check 및 OpenSpec 엄격 검증 통과.
 
 실제 화면 읽기 프로그램의 음성·탐색 검증은 실행하지 않았다. 위 결과는 Chrome 접근성 트리와 브라우저 키보드 검증 결과다.
+
+## 모바일 메뉴 기본 대화상자 전환 검증 — 2026-10-27
+
+메뉴를 `<dialog>`와 `showModal()`로 바꾼 뒤 Chrome 확장 브라우저(400px iframe)와 임시 Playwright Chromium headless(375×800, 1440×900)로 확인했다. 프로젝트 의존성 파일은 변경하지 않았다.
+
+- [x] 페이지 로드 시 메뉴는 닫혀 있고(display: none) 접근성 트리에 대화상자가 없음.
+- [x] 열기 시 Close menu 버튼 포커스, aria-expanded=true, 대화상자가 모달 상태(:modal).
+- [x] 열린 동안 Chrome 접근성 트리에 Menu 대화상자와 메뉴 내부 링크·버튼만 남고 main과 제목(9개)이 제외됨. 닫은 뒤 그대로 복원됨.
+- [x] 마지막 링크(Twitter)에서 Tab, 첫 링크(로고)에서 Shift+Tab 시 포커스가 브라우저 UI(headless에서는 body)로 나갔다가 메뉴 안으로 돌아오며, 히어로 영역·햄버거 트리거 등 배경 요소는 포커스를 받지 않음.
+- [x] 열린 메뉴의 위치·크기(뷰포트 전체), 여백 0, 패딩·배경색이 변경 전과 같음. 대화상자 기본 글자색은 검정이지만 메뉴 텍스트는 모두 흰색을 직접 지정해 영향 없음.
+- [x] Escape, 닫기 버튼, 페이지 내부 링크 선택 시 메뉴가 닫히고 aria-expanded=false, Open menu 버튼으로 포커스 복귀, 링크 목적지(#features)로 이동.
+- [x] 열린 상태에서 lg 폭 진입 시 메뉴가 닫히고 헤더 Bookmark home 링크에 포커스, 배경 포커스 가능. 모바일 폭 복귀 후 다시 열 수 있음.
+- [x] 반복 열기·닫기 후 기능 탭, FAQ, 이메일 오류 처리 정상 동작.
+- [x] npm run build, npm run format:check(Prettier 및 ESLint) 통과.
+- [ ] Firefox·Safari의 Tab/Shift+Tab 경계 동작. 이 환경에서는 Chromium만 자동 실행할 수 있어 미확인.
+- [ ] 실제 화면 읽기 프로그램의 가상 커서 검증. 음성 출력에 접근할 수 없어 실행하지 않았고, 위 접근성 트리 결과로 배경 제외만 확인했다.
